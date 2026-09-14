@@ -11,6 +11,12 @@ start_page('index');
     <h1><span class="bienvenue">Bienvenue à  !</span></h1>
 </div>
 
+<div class="zone-bouton-profil">
+    <a href="profil.php">
+        <button type="button" class="bouton">Votre profil</button>
+    </a>
+</div>
+
 <div class="bloc-text b1">
     <div class="zone-text">
         <p>

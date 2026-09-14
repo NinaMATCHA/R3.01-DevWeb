@@ -137,6 +137,12 @@ nav a:hover {
     gap: 60px;
 }
 
+.zone-bouton-profil {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 .bouton {
     /* Styme */
     background-color: white;
