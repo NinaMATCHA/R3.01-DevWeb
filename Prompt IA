@@ -1,0 +1,3 @@
+* Gemini
+  - Mon routeur test très basique ne marche pas et je ne comprends pas pourquoi. Peux tu m'expliquer ce qui ne marche pas ?
+    -> L'IA m'a expliquer qu'il manquait le .htaccess, ce qui est une sorte de panneau de redirection
