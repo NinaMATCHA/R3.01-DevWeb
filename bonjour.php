@@ -1,7 +1,7 @@
 <?php
 
     require 'utils.inc.php';
-    start_page();
+    start_page('BONJOUR');
 
 ?>
 
