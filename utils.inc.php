@@ -1,4 +1,6 @@
 <?php
+/* ATTENTION : NE PAS OUBLIER DE CHANGER LE NOM DES PAGES POUR "SALOU", "NEVOT" ET "BONJOUR" QUAND ON AURA LE SUJET */
+
 function start_page($title): void
 {
 ?>
@@ -17,9 +19,9 @@ function start_page($title): void
 <nav>
     <ul>
         <li><a href="index.php">Bienvenue</a></li>
-        <li><a href="#b">SALOU</a></li>
-        <li><a href="#c">Nevot</a></li>
-        <li><a href="#d">BONJOUR</a></li>
+        <li><a href="salou.php">SALOU</a></li>
+        <li><a href="nevot.php">Nevot</a></li>
+        <li><a href="bonjour.php">BONJOUR</a></li>
     </ul>
 </nav>
 

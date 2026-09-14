@@ -4,7 +4,7 @@
 
 require 'utils.inc.php';
 
-start_page('titre');
+start_page('index');
 ?>
 
 <div class="zone-bienvenue-h1">
