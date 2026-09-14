@@ -1,0 +1,242 @@
+:root {
+    --light-aqua: aquamarine;
+    --void: #131313;
+    --stone: #1c1712;
+    --stone-2: #251e17;
+    --bone: #ede7da;
+    --bone-dim: #b7af9e;
+    --amethyst: #9b7ec4;
+    --amethyst-glow: #d4b8f5;
+    --deep-blue: #6600ff;
+    --light-blue: #7f85ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--light-aqua);
+    font-family: 'Roboto Mono', monospace;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 48px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18px;
+    text-transform: uppercase;
+    color: var(--void);
+}
+
+nav ul {
+    list-style: none;
+    display:flex;
+    gap: 40px;
+}
+
+nav a {
+    display: inline-block;
+    color: var(--deep-blue);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--light-blue);
+    transform: scale(1.1);
+}
+
+.zone-bienvenue-h1 {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    /* Position au centre */
+    margin: 100px auto; /* top right bottom left */
+
+    /* Couleur */
+    background-color: var(--bone);
+    border-radius: 10px;
+    border: 2px solid var(--void);
+
+    /* Taille */
+    height: 100px;
+    width: 340px;
+}
+
+.bienvenue {
+    /* On enleve par defaut le margin du h1 */
+    margin: 0;
+    text-align: center;
+}
+
+.zone-text {
+    display: flex;
+
+    /* Position du texte */
+    text-align: center;
+    justify-content: center;
+
+    /* Style du texte */
+    font-size: 1.7em;
+    color: var(--void);
+}
+
+.bloc-text {
+    margin: 100px auto;
+    background-color: var(--bone);
+    border-radius: 20px;
+    padding: 10px;
+    border: 2px solid var(--void);
+}
+
+.bloc-text.b1 {
+    /* Taille du premier bloc */
+    width: 800px;
+    height: 140px;
+
+    /* Style */
+    background-color: var(--bone);
+    border-radius: 20px;
+    border: 2px solid var(--void);
+}
+
+.bloc-text.b2 {
+    /* Taille du deuxieme bloc */
+    width: 65em;
+    background-color: var(--amethyst);
+    border-radius: 40px;
+    border: 2px solid var(--void);
+}
+
+/* BOUTON */
+
+.zone-bouton {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    gap: 60px;
+}
+
+.bouton {
+    /* Styme */
+    background-color: white;
+    color: var(--void);
+    border: 2px solid black;
+    border-radius: 10px;
+
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.bouton:hover {
+    background-color: var(--bone-dim);
+    color: black;
+    transform: scale(1.1);
+}
+
+/* ------- PARTIE INSCRIPTION -------- */
+
+.zone-inscription-connexion {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    /* Position au centre */
+    margin: 100px auto; /* top right bottom left */
+
+    /* Couleur */
+    background-color: var(--bone);
+    border-radius: 10px;
+    border: 2px solid var(--void);
+
+    /* Taille */
+    height: 100px;
+    width: 300px;
+}
+
+.bloc-text.i1 {
+    /* Taille du premier bloc */
+    width: 800px;
+    height: 140px;
+
+    /* Style */
+    background-color: var(--bone);
+    border-radius: 20px;
+    border: 2px solid var(--void);
+}
+
+/* FORMULAIRE */
+
+/* FORMULAIRE */
+
+.formulaire {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-form {
+    background-color: var(--bone);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 500px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-input {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+.zone-bouton {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 60px;
+}
+
+.bouton-formulaire {
+    background-color: white;
+    color: var(--void);
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.bouton-formulaire:hover {
+    background-color: var(--bone-dim);
+    color: black;
+    transform: scale(1.1);
+}
