@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="ssh-ewanf.alwaysdata.net" id="5f17975e-9df9-4d40-8336-a0942ce52211" port="22" nameFormat="DESCRIPTIVE" username="ewanf" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>

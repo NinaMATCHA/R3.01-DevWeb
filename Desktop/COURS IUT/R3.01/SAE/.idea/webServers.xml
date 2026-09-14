@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="26a7ab82-841f-4723-80fa-f448b6006e1e" name="[nom-site]-server" url="http://ewanf.alwaysdata.net">
+        <fileTransfer rootFolder="/home/ewanf/www" accessType="SFTP" host="ssh-ewanf.alwaysdata.net" port="22" sshConfigId="5f17975e-9df9-4d40-8336-a0942ce52211" sshConfig="ewanf@ssh-ewanf.alwaysdata.net:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
