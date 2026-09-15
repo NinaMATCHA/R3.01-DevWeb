@@ -26,13 +26,24 @@ function start_page($title): void
 </nav>
 
 
-
 <?php
 }
 
 function end_page(): void
 {
 ?>
+
+<div class=zone-footer>
+    <footer class="footer">
+        <h1>Mention légales</h1>
+        <p>
+            Le présent du site à été réalisé par FRANCOIS Ewan, JAMBERT Aurele, KHADISSOVA Lezina, 
+            MATIC CHARBIT Nina et MOYENIN Nicolas.
+
+            Hébergé par alwaysdata.
+        </p>
+    </footer>
+</div>
 
 </body>
 </html>

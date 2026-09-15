@@ -18,16 +18,18 @@ start_page('Connection');
 </div>
 
 <div class="formulaire">
-    <form action="" method="post" class="contact-formulaire">
+    <form action="connection.php" method="post" class="contact-formulaire">
         <input type="email" name="email" placeholder="email" class="contact-input" required />
         <input type="password" name="mdp" placeholder="Mot de passe" class="contact-input" required />
 
         <div class="zone-bouton">
-            <button type="submit" name="action" class="bouton-formulaire">envoyer</button>
+            <button type="submit" name="action" value="connection" class="bouton-formulaire">envoyer</button>
             <button type="reset" class="bouton-formulaire">Réinitialiser</button>
+            <button type="submit" name="MdpOublie" class="bouton-formulaire">Mot de passe oublié ?</button>
         </div>
     </form>
 </div>
+
 
 <?php
 end_page();

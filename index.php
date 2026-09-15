@@ -11,6 +11,12 @@ start_page('index');
     <h1><span class="bienvenue">Bienvenue à  !</span></h1>
 </div>
 
+<div class="zone-bouton-profil">
+    <a href="profil.php">
+        <button type="button" class="bouton">Votre profil</button>
+    </a>
+</div>
+
 <div class="bloc-text b1">
     <div class="zone-text">
         <p>
@@ -31,7 +37,7 @@ start_page('index');
     <a href="Inscription.php">
         <button type="button" class="bouton">Inscrivez-vous</button>
     </a>
-    <a href="Connection.php">
+    <a href="Connection_page.php">
         <button type="button" class="bouton">Connectez-vous</button>
     </a>
 </div>
