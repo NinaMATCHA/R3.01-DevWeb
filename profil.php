@@ -32,7 +32,7 @@
     </div>
     
     <div class="zone-bouton">
-        <a href="Connection.php">
+        <a href="Connection_page.php">
             <button type="button" class="bouton">Connectez-vous</button>
         </a>
     </div>

@@ -37,7 +37,7 @@ start_page('index');
     <a href="Inscription.php">
         <button type="button" class="bouton">Inscrivez-vous</button>
     </a>
-    <a href="Connection.php">
+    <a href="Connection_page.php">
         <button type="button" class="bouton">Connectez-vous</button>
     </a>
 </div>
