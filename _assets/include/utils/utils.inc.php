@@ -9,7 +9,7 @@ function start_page($title): void
 <html lang="fr">
 <head>
     <title><?php echo $title; ?></title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="_assets/include/style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
