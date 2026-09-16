@@ -1,6 +1,6 @@
 <?php
 
-    require 'utils.inc.php';
+    require '_assets/include/utils/utils.inc.php';
     start_page('BONJOUR');
 
 ?>

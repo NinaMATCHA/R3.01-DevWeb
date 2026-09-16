@@ -2,7 +2,7 @@
 /* MOT DE PASSE POUR LE SITE : sae_mdp_r301 */
 
 
-require 'utils.inc.php';
+require '_assets/include/utils/utils.inc.php';
 start_page('Inscription');
 ?>
 
