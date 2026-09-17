@@ -11,7 +11,7 @@ try {
         ) {
         if ($_GET['action'] === 'inscription') {
             if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0) {
-                (new \User\Controllers\Post\Post())->execute($_GET['id']);
+                (new \User\Controllers\Connection())->execute($_GET['id']);
             }
             throw new ControllerException('Aucun identifiant de billet envoyé');
         }
@@ -62,4 +62,3 @@ start_page('index');
 <?php
 end_page();
 ?>
-
