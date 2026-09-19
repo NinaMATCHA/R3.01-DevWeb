@@ -1,64 +1,53 @@
 <?php
 /* MOT DE PASSE POUR LE SITE : sae_mdp_r301 */
 
-
-require 'utils.inc.php';
 require '_assets/includes/autoloader.php';
 
 try {
-    if (
-        filter_input(INPUT_GET, 'action')
-        ) {
-        if ($_GET['action'] === 'inscription') {
-            if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0) {
-                (new \User\Controllers\Connection())->execute($_GET['id']);
+    if (filter_input(INPUT_GET, 'action')) {
+        if ($_GET['action'] === 'connection') {
+            /*
+            Tout ce bloc est en commentaire parce que le code du prof prend deja en compte la gestion des id avec la connection a la bdd
+            pour le moment on veux juste afficher la page trkl
+
+            if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0 pareil, quand on va gérer la gestion des id) {
+                (new \modules\controllers\Connection())->execute();/*->execute($_GET['id']); --> quand on va gérer la gestion des id
             }
-            throw new ControllerException('Aucun identifiant de billet envoyé');
+            else {
+                throw new ControllerException('Aucun identifiant de billet envoyé');
+            }
+            */
+            (new \modules\controllers\Connection_controller())->execute();
         }
-        throw new ControllerException('La page que vous recherchez n\'existe pas');
+
+        else if ($_GET['action'] === 'inscription') {
+            (new \modules\controllers\Inscription_controller())->execute();
+        }
+
+        else if ($_GET['action'] === 'profil') {
+            (new \modules\controllers\Profil_controller())->execute();
+        }
+
+        else if ($_GET['action'] === 'salou') {
+            (new \modules\controllers\Salou_controller())->execute();
+        }
+
+        else if ($_GET['action'] === 'nevot') {
+            (new \modules\controllers\Nevot_controller())->execute();
+        }
+
+        else if ($_GET['action'] === 'bonjour') {
+            (new \modules\controllers\Bonjour_controller())->execute();
+        }
+
+        else {
+            throw new ControllerException('La page que vous recherchez n\'existe pas');
+        }
     }
-    (new \Blog\Controllers\Homepage\Homepage())->execute();
+    else {
+        (new \modules\controllers\Homepage\Homepage_controller())->execute();
+    }
 } catch (ControllerException $e) {
-    (new \Blog\Views\Error($e->getMessage()))->show();
-
-start_page('index');
-?>
-
-<div class="zone-bienvenue-h1">
-    <h1><span class="bienvenue">Bienvenue à  !</span></h1>
-</div>
-
-<div class="zone-bouton-profil">
-    <a href="profil.php">
-        <button type="button" class="bouton">Votre profil</button>
-    </a>
-</div>
-
-<div class="bloc-text b1">
-    <div class="zone-text">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-    </div>
-</div>
-
-<div class="bloc-text b2">
-    <div class="zone-text">
-        <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
-    </div>
-</div>
-<div class="zone-bouton">
-    <a href="Inscription.php">
-        <button type="button" class="bouton">Inscrivez-vous</button>
-    </a>
-    <a href="Connection_page.php">
-        <button type="button" class="bouton">Connectez-vous</button>
-    </a>
-</div>
-
-<?php
-end_page();
+    (new \modules\views\error($e->getMessage()))->show();
+}
 ?>
