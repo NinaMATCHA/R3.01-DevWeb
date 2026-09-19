@@ -5,6 +5,8 @@ namespace modules\controllers;
 
 class Connection_controller {
     public function execute(): void {
+        $connectionModel = new Connection_model(DatabaseConnection::getInstance());
+        $connection = $connectionModel->getConnection();
         (new \modules\views\connection_view())->show();
     }
 }

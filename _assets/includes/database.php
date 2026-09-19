@@ -1,4 +1,4 @@
-<php 
+<?php 
 
 function databaseConnection() {
    try {
@@ -6,7 +6,11 @@ function databaseConnection() {
     $pdo = new \PDO($dsn, 'ninamc','NevotLe+Fortdu13');
     $pdo->exec('SET CHARACTER SET utf8');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (Exception $e) { die('Connection impossible : ' . $e->getMessage());}
+    
+    return $pdo;
+    } catch (Exception $e) {
+        die('Connection impossible : ' . $e->getMessage());
+    }
 
 }
 
