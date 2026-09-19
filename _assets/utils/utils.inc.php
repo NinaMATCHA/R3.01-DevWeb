@@ -9,7 +9,7 @@ function start_page($title): void
 <html lang="fr">
 <head>
     <title><?php echo $title; ?></title>
-    <link rel="stylesheet" href="_assets/include/style/style.css">
+    <link rel="stylesheet" href="_assets/style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -19,9 +19,9 @@ function start_page($title): void
 <nav>
     <ul>
         <li><a href="index.php">Bienvenue</a></li>
-        <li><a href="salou.php">SALOU</a></li>
-        <li><a href="nevot.php">Nevot</a></li>
-        <li><a href="bonjour.php">BONJOUR</a></li>
+        <li><a href="index.php?action=salou">SALOU</a></li>
+        <li><a href="index.php?action=nevot">Nevot</a></li>
+        <li><a href="index.php?action=bonjour">BONJOUR</a></li>
     </ul>
 </nav>
 
