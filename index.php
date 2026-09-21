@@ -40,6 +40,10 @@ try {
             (new \modules\controllers\Bonjour_controller())->execute();
         }
 
+        else if ($_GET['action'] === 'mdpOublie') {
+            (new \modules\controllers\forgot_password_controller())->execute();
+        }
+
         else {
             throw new ControllerException('La page que vous recherchez n\'existe pas');
         }

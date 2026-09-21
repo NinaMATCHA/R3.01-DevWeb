@@ -5,7 +5,7 @@ namespace modules\views; /* Toujours en premier */
 class homepage_view {
     public function show(): void {
         require '_assets/utils/utils.inc.php';
-        start_page("Homepage");
+        start_page("Bienvenue");
 ?>
 
         <div class="zone-bienvenue-h1">

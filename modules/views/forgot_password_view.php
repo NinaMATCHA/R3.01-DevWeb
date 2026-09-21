@@ -23,14 +23,16 @@ class forgot_password_view {
         <?php endif; ?>
 
         <!-- Form -->
-        <form action="index.php?action=forgot_password" method="POST">
-            <div>
-                <label for="email">Votre adresse email :</label>
-                <input type="email" id="email" name="email" required placeholder="exemple@domaine.fr">
-            </div>
+        <div class="formulaire">
+            <form action="index.php?action=forgot_password" method="POST" class="contact-formulaire">
+                <div>
+                    <label for="email">Votre adresse email :</label>
+                    <input type="email" id="email" name="email" placeholder="exemple@domaine.fr" class="contact-input" require>
+                </div>
 
-            <button type="submit">Envoyer le lien</button>
-        </form>
+                <button type="submit">Envoyer le lien</button>
+            </form>
+        </div>
 
 <?php
         end_page();
