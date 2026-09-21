@@ -28,9 +28,12 @@ class connection_view {
                 <div class="zone-bouton">
                     <button type="submit" name="action" value="connection" class="bouton-formulaire">envoyer</button>
                     <button type="reset" class="bouton-formulaire">Réinitialiser</button>
-                    <button type="submit" name="MdpOublie" class="bouton-formulaire">Mot de passe oublié ?</button>
                 </div>
             </form>
+            
+            <a href="index.php?action=mdpOublie">
+                <button type="submit" name="MdpOublie" class="bouton-formulaire">Mot de passe oublié ?</button>
+            </a>
         </div>
 
 <?php
