@@ -27,7 +27,7 @@ class forgot_password_view {
             <form action="index.php?action=forgot_password" method="POST" class="contact-formulaire">
                 <div>
                     <label for="email">Votre adresse email :</label>
-                    <input type="email" id="email" name="email" placeholder="exemple@domaine.fr" class="contact-input" require>
+                    <input type="email" id="email" name="email" placeholder="exemple@domaine.fr" class="contact-input" required>
                 </div>
 
                 <button type="submit">Envoyer le lien</button>
