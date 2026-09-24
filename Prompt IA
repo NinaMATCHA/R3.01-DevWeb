@@ -1,3 +1,13 @@
 * Gemini
   - Mon routeur test très basique ne marche pas et je ne comprends pas pourquoi. Peux tu m'expliquer ce qui ne marche pas ?
     -> L'IA m'a expliquer qu'il manquait le .htaccess, ce qui est une sorte de panneau de redirection
+  
+  - Rappel nous toutes les commandes git utiles et importantes et leur syntaxes pour un projet, tel que le commit ou le push.
+    -> 1. Ajouter le fichier modifié
+      git add views/votre-vue
+
+      2. Créer le commit
+      git commit -m "fix/message pour le commit"
+
+      3. Envoyer la branche sur GitHub
+      git push -u origin nom-de-la-branche
