@@ -1,9 +1,13 @@
 <?php
 
 namespace modules\models;
+use PDO;
+
+use _assets\includes\DatabaseConnection;
+
 class Connection_model {
     #appelle le construct du DatabaseConnection.php et recupere ses id de connection pour pouvoir faire une query
-    public function __construct(private \Includes\Database\DatabaseConnection $connection) {}
+    public function __construct(private DatabaseConnection $connection) {}
 
     #retourne les resultats que l'on veut de notre query ( je verrai plus tard mais faudra comparer les login avc WHERE )
     public function getConnection(String $_login, $_password): array
