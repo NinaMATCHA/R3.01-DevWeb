@@ -3,8 +3,7 @@
    se connecter en placant $id en paramètre dans la fonction execute */
 namespace modules\controllers;
 
-require_once __DIR__ . '/../../_assets/includes/DatabaseConnection.php';
-use DatabaseConnection;
+use _assets\includes\DatabaseConnection;
 use modules\models\Connection_model;
 
 class Connection_controller {
