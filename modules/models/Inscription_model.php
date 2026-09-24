@@ -8,7 +8,7 @@ class Inscription_model {
 
     public function getInscription(string $_login, $_password) : void
     {
-        if (!$statement = $this->connection->getConnection()->query('INSERT INTO users ($_login, $_password) VALUES ($login, $password);'))
+        if (!$statement = $this->connection->getConnection()->query("INSERT INTO users (login, password) VALUES ($_login, $_password);"))
         {
             throw new DatabaseException();
         }
