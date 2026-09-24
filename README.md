@@ -16,13 +16,13 @@ Une popup apparaîtra en bas à droite vous demandant si vous souhaitais ouvrir 
 
 ## Rappel de certaine commandes git en cas de doute ou d'oublie
 
-1. Ajouter le fichier modifié
+1- Ajouter le fichier modifié
     git add views/votre-vue
 
-2. Créer le commit
+2- Créer le commit
     git commit -m "fix/message pour le commit"
 
-3. Envoyer la branche sur GitHub
+3- Envoyer la branche sur GitHub
   git push -u origin nom-de-la-branche
 
 
