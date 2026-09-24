@@ -6,9 +6,9 @@ class Connection_model {
     public function __construct(private \Includes\Database\DatabaseConnection $connection) {}
 
     #retourne les resultats que l'on veut de notre query ( je verrai plus tard mais faudra comparer les login avc WHERE )
-    public function getConnection(String $login): array
+    public function getConnection(String $_login, $_password): array
     {
-        if (!$statement = $this->connection->getConnection()->query('SELECT login, password FROM users'))#<-- query ici [a changer c une base]
+        if (!$statement = $this->connection->getConnection()->query("SELECT login, password FROM users WHERE login = '$_login' AND password = '$_password';"))#<-- query ici [a changer c une base]
         {
             throw new DatabaseException();
         }
