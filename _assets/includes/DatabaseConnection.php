@@ -1,4 +1,6 @@
 <?php
+namespace _assets\includes;
+use PDO; // C'est une class global pour la connexion a la bdd
 
 class DatabaseConnection
 {

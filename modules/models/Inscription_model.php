@@ -1,14 +1,18 @@
 <?php
 
 namespace modules\models;
-class Inscription_model {
-    public function __construct(private \Includes\Database\DatabaseConnection $connection) {}
 
-    public function getInscription() : void
+use _assets\includes\DatabaseConnection;
+class Inscription_model {
+    public function __construct(private DatabaseConnection $connection) {}
+
+    public function getInscription(string $_login, $_password) : void
     {
-        if (!$statement = $this->connection->getConnection()->query('INSERT INTO users (login, password) VALUES ($login, $password);'))
+        if (!$statement = $this->connection->getConnection()->query('INSERT INTO users ($_login, $_password) VALUES ($login, $password);'))
         {
             throw new DatabaseException();
         }
     }
 }
+
+?>

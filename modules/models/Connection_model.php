@@ -2,7 +2,7 @@
 
 namespace modules\models;
 class Connection_model {
-    #appelle le construct du database.php et recupere ses id de connection pour pouvoir faire une query
+    #appelle le construct du DatabaseConnection.php et recupere ses id de connection pour pouvoir faire une query
     public function __construct(private \Includes\Database\DatabaseConnection $connection) {}
 
     #retourne les resultats que l'on veut de notre query ( je verrai plus tard mais faudra comparer les login avc WHERE )
@@ -20,3 +20,5 @@ class Connection_model {
         return $connection;
     }
 }
+
+?>
