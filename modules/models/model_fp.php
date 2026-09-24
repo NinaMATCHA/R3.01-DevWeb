@@ -1,12 +1,11 @@
 <?php
-namespace Blog\Model\Post; // PSR-12: head blocks must be separated by a single blank line
+namespace modules\models; // PSR-12: head blocks must be separated by a single blank line
 class PostRepository { // PSR-12: opening brace next line
     public function __construct(private \Includes\Database\DatabaseConnection $connection) {}
 
-    public function sendMail(): bool
+    public function sendMail(string $to): bool
     {
     $code = (string) random_int(100000, 999999);
-    $to      = $mail_adress;
     $subject = 'Code de récupération de mot de passe';
     $message = "Bonjour, voici votre code de récupération de mot de passe" . $code;
 
