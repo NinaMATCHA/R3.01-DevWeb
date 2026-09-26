@@ -5,7 +5,7 @@ use PDO;
 
 use _assets\includes\DatabaseConnection;
 
-class Connection_model {
+class login_model {
     #appelle le construct du DatabaseConnection.php et recupere ses id de connection pour pouvoir faire une query
     public function __construct(private DatabaseConnection $connection) {}
 

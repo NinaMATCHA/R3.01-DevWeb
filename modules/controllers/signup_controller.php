@@ -3,9 +3,9 @@
 namespace modules\controllers;
 
 use _assets\includes\DatabaseConnection;
-use modules\models\Inscription_model;
+use modules\models\signup_model;
 
-class Inscription_controller {
+class signup_controller {
     public function execute(): void {
         if (isset($_POST['action']) && !empty($_POST['action'])) {
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -15,7 +15,7 @@ class Inscription_controller {
 
                 if ($_action === 'inscription') {
 
-                    $inscriptionModel = new Inscription_model(DatabaseConnection::getInstance());
+                    $inscriptionModel = new signup_model(DatabaseConnection::getInstance());
                     $inscription = $inscriptionModel->getInscription($_login, $_password);
 
                     header('Location: index.php?success=true');
@@ -24,7 +24,7 @@ class Inscription_controller {
             }
         }
 
-        (new \modules\views\inscription_view())->show();
+        (new \modules\views\signup_view())->show();
     }
 }
 ?>

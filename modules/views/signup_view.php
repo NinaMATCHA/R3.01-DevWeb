@@ -2,7 +2,7 @@
 
     namespace modules\views;
 
-    class inscription_view {
+    class signup_view {
         public function show(): void {
             require '_assets/utils/utils.inc.php';
             start_page("inscription");

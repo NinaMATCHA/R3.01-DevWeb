@@ -17,11 +17,11 @@ try {
                 throw new ControllerException('Aucun identifiant de billet envoyé');
             }
             */
-            (new \modules\controllers\Connection_controller())->execute();
+            (new \modules\controllers\login_controller())->execute();
         }
 
         else if ($_GET['action'] === 'inscription') {
-            (new \modules\controllers\Inscription_controller())->execute();
+            (new \modules\controllers\signup_controller())->execute();
         }
 
         else if ($_GET['action'] === 'profil') {
@@ -37,7 +37,7 @@ try {
         }
 
         else if ($_GET['action'] === 'bonjour') {
-            (new \modules\controllers\Bonjour_controller())->execute();
+            (new \modules\controllers\hello_controller())->execute();
         }
 
         else {

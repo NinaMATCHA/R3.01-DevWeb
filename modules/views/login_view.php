@@ -2,7 +2,7 @@
 
 namespace modules\views; /* Toujours en premier */
 
-class connection_view {
+class login_view {
     public function show(): void {
         require '_assets/utils/utils.inc.php';
         start_page("connection");
