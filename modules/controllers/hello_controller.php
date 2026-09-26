@@ -2,9 +2,9 @@
 
 namespace modules\controllers;
 
-class Bonjour_controller {
+class hello_controller {
     public function execute(): void {
-        (new \modules\views\bonjour_view())->show();
+        (new \modules\views\hello_view())->show();
     }
 }
 

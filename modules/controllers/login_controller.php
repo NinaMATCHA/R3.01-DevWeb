@@ -4,9 +4,9 @@
 namespace modules\controllers;
 
 use _assets\includes\DatabaseConnection;
-use modules\models\Connection_model;
+use modules\models\login_model;
 
-class Connection_controller {
+class login_controller {
     public function execute(): void {
         if (isset($_POST['action']) && !empty($_POST['action'])) {
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -16,7 +16,7 @@ class Connection_controller {
 
                 if ($_action === 'connection') {
 
-                    $connectionModel = new Connection_model(DatabaseConnection::getInstance());
+                    $connectionModel = new login_model(DatabaseConnection::getInstance());
                     $connection = $connectionModel->getConnection($_login, $_password);
                     if ($connection == ''){
                         echo "Pas de compte trouvé ou mot de passe erroné";
@@ -29,7 +29,7 @@ class Connection_controller {
             }
         }
         
-        (new \modules\views\connection_view())->show();
+        (new \modules\views\login_view())->show();
     }
 }
 
