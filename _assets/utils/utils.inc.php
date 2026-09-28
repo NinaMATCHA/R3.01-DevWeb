@@ -23,8 +23,15 @@ function start_page($title): void
         <li><a href="index.php?action=nevot">Nevot</a></li>
         <li><a href="index.php?action=bonjour">BONJOUR</a></li>
     </ul>
+    <div class="dropdown">
+        <button type="button">Menu ▾</button>
+        <div class="menu">
+            <a href="index.php?action=inscription">Inscription</a>
+            <a href="index.php?action=connection">Connexion</a>
+            <a href="index.php?action=profil">Profil</a>
+        </div>
+    </div>
 </nav>
-
 
 <?php
 }
@@ -33,9 +40,8 @@ function end_page(): void
 {
 ?>
 
-<div class=zone-footer>
-    <footer class="footer">
-        <h1>Mention légales</h1>
+    <footer>
+        <h2>Mention légales</h2>
         <p>
             Le présent du site à été réalisé par FRANCOIS Ewan, JAMBERT Aurele, KHADISSOVA Lezina, 
             MATIC CHARBIT Nina et MOYENIN Nicolas.
@@ -43,7 +49,6 @@ function end_page(): void
             Hébergé par alwaysdata.
         </p>
     </footer>
-</div>
 
 </body>
 </html>
