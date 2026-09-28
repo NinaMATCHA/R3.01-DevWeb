@@ -28,7 +28,7 @@ function start_page($title): void
         <div class="menu">
             <a href="index.php?action=inscription">Inscription</a>
             <a href="index.php?action=connection">Connexion</a>
-            <a href="index.php?action=profil">Profil</button></a>
+            <a href="index.php?action=profil">Profil</a>
         </div>
     </div>
 </nav>

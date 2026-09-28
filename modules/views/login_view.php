@@ -8,12 +8,13 @@ class login_view {
         start_page("connection");
 ?>
 
-        <div class="zone-inscription-connexion">
+<main>
+        <header>
             <h1>Connection</h1>
-        </div>
+        </header>
 
-        <div class="zone-text">
-            <div class="bloc-text i1">
+        <div class="card">
+            <div>
                 <p>
                     Vous avez déjà vendu votre âme ? Connectez vous pour accéder à l'ensemble du site.
                 </p>
@@ -21,20 +22,19 @@ class login_view {
         </div>
 
         <div class="formulaire">
-            <form action="index.php?action=connection" method="post" class="contact-formulaire">
-                <input type="email" name="email" placeholder="email" class="contact-input" required />
-                <input type="password" name="mdp" placeholder="Mot de passe" class="contact-input" required />
+            <form action="index.php?action=connection" method="post">
+                <input type="email" name="email" placeholder="email" class="input" required />
+                <input type="password" name="mdp" placeholder="Mot de passe" class="input" required />
 
-                <div class="zone-bouton">
-                    <button type="submit" name="action" value="connection" class="bouton-formulaire">envoyer</button>
-                    <button type="reset" class="bouton-formulaire">Réinitialiser</button>
+                <div>
+                    <button type="submit" name="action" value="connection" class="btn">Envoyer</button>
+                    <button type="reset" class="btn">Réinitialiser</button>
                 </div>
             </form>
             
-            <a href="index.php?action=mdpOublie">
-                <button type="submit" name="MdpOublie" class="bouton-formulaire">Mot de passe oublié ?</button>
-            </a>
+            <a href="index.php?action=mdpOublie">Mot de passe oublié ?</a>
         </div>
+</main>
 
 <?php
         end_page();
