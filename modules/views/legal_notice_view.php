@@ -1,4 +1,14 @@
-<section class="mentions-legales">
+<?php
+
+namespace modules\views; /* Toujours en premier */
+
+class legal_notice_view {
+    public function show(): void {
+        require '_assets/utils/utils.inc.php';
+        start_page("Bienvenue");
+?>
+
+<section class="legal_notice">
     <h1>Mentions légales</h1>
 
     <article>
@@ -49,3 +59,9 @@
         </p>
     </article>
 </section>
+
+<?php
+        end_page();
+    }
+}
+?>
