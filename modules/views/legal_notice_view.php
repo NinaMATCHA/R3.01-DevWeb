@@ -25,9 +25,11 @@ class legal_notice_view {
         <p>Le site est développé et édité par :</p>
         <ul>
             <li><strong>Ewan François</strong></li>
-            <li><strong>Nicolas Moyenin</strong></li>
-            <li><strong>Nina Matcha</strong></li>
             <li><strong>Aurèle Jambert</strong></li>
+            <li><strong>Lezina Khadissova</strong></li>
+            <li><strong>Nina Matcha</strong></li>
+            <li><strong>Nicolas Moyenin</strong></li>
+
         </ul>
         <p><strong>Directeur de publication :</strong> Mickael Martin - Nevot</p>
     </article>
