@@ -23,8 +23,10 @@ class login_view {
 
         <div class="form-area">
             <form action="index.php?action=connection" method="post">
-                <input type="email" name="email" placeholder="email" class="input" required />
-                <input type="password" name="mdp" placeholder="Mot de passe" class="input" required />
+                <label for="email">Votre adresse email :</label>
+                <input type="email" name="email" placeholder="exemple@domaine.fr" class="input" required />
+                <label for="password">Votre Mot de Passe :</label>
+                <input type="password" name="password" placeholder="Mot de passe" class="input" required />
 
                 <div>
                     <button type="submit" name="action" value="connection" class="btn">Envoyer</button>

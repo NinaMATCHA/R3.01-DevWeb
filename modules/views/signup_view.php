@@ -21,8 +21,11 @@
 
             <div class="form-area">
                 <form action="" method="post">
-                    <input type="email" name="email" placeholder="email" class="input" required />
+                    <label for="email">Votre adresse email :</label>
+                    <input type="email" name="email" placeholder="exemple@domaine.fr" class="input" required />
+                    <label for="password">Votre Mot de Passe :</label>
                     <input type="password" name="password" placeholder="Mot de passe" class="input" required />
+                    <label for="verif">Vérification de votre Mot de Passe :</label>
                     <input type="password" name="verif" placeholder="Verification" class="input" required />
 
                     <div>

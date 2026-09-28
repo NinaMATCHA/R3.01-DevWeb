@@ -8,7 +8,9 @@ class forgot_password_view {
         start_page("Mot de passe oublié");
 ?>
 
-        <h1>Réinitialisation du mot de passe</h1>
+<main>
+    
+    <header><h1>Réinitialisation du mot de passe</h1></header>
 
         <?php if (isset($messageError)): ?>
             <p style="color: red;">
@@ -23,20 +25,21 @@ class forgot_password_view {
         <?php endif; ?>
 
         <!-- Form -->
-        <div class="formulaire">
-            <form action="index.php?action=update_password" method="post" class="contact-formulaire">
+        <div class="form-area">
+            <form action="index.php?action=update_password" method="post">
                 <input type="hidden" name="login" value="<?=$_GET['login']?>">
 
-                <input type="password" name="n_mdp" placeholder="Nouveau Mot de passe" class="contact-input" required />
+                <input type="password" name="n_mdp" placeholder="Nouveau Mot de passe" class="input" required />
 
-                <input type="password" name="confirm_mdp" placeholder="Confirmation du Nouveau Mot de passe" class="contact-input" required />
+                <input type="password" name="confirm_mdp" placeholder="Confirmation" class="input" required />
                 
-                <div class="zone-bouton">
-                    <button type="submit" name="action" value="valider" class="bouton-formulaire">Envoyer</button>
-                    <button type="reset" class="bouton-formulaire">Réinitialiser</button>
+                <div>
+                    <button type="submit" name="action" value="valider" class="btn">Envoyer</button>
+                    <button type="reset" class="btn">Réinitialiser</button>
                 </div>
             </form>
         </div>
+</main>
 
 <?php
         end_page();

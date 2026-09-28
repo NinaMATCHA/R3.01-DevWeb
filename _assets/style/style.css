@@ -43,21 +43,21 @@ nav ul {
     gap: 30px;
 }
 
-nav a, nav button, header a{
+nav a, 
+nav a:visited, 
+nav button, 
+header a {
     color: var(--sand);
     font-family: var(--font-titre);
     font-size: 0.85rem;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 1.5px;
+    transition: color 0.2s ease;
 }
 
-nav a:hover {
-    color: var(--light-blue);
-    transform: scale(1.1);
-}
-
-nav a:hover, nav button:hover {
+nav a:hover, 
+nav button:hover {
     color: var(--gold);
 }
 
@@ -143,18 +143,6 @@ h1, h2 {
 .btn:hover { 
     background: var(--gold);
     color: var(--bg); 
-}
-
-a:link {
-  color: var(--gold);
-}
-
-a:visited {
-  color: var(--gold-dim);
-}
-
-a:hover {
-    color: white;
 }
 
 footer {
