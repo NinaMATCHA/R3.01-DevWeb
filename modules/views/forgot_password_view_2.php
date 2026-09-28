@@ -29,10 +29,10 @@ class forgot_password_view {
             <form action="index.php?action=update_password" method="post">
                 <input type="hidden" name="login" value="<?=$_GET['login']?>">
 
+                <label for="password">Votre adresse email :</label>
                 <input type="password" name="n_mdp" placeholder="Nouveau Mot de passe" class="input" required />
-
-                <input type="password" name="confirm_mdp" placeholder="Confirmation" class="input" required />
-                
+                <label for="confirm">Votre adresse email :</label>
+                <input type="password" name="confirm" placeholder="Confirmation" class="input" required />
                 <div>
                     <button type="submit" name="action" value="valider" class="btn">Envoyer</button>
                     <button type="reset" class="btn">Réinitialiser</button>
