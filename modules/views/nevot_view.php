@@ -8,9 +8,11 @@ class nevot_view {
         start_page("Nevot");
 ?>
 
-        <div class="zone-bienvenue-h1">
-            <h1><span class="bienvenue">NEVOT PHP MASTER LVL 1000000000  !</span></h1>
+<main>
+        <div class="card">
+            <h1>NEVOT PHP MASTER LVL 1000000000  !</h1>
         </div>
+</main>
 
 <?php
         end_page();

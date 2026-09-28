@@ -8,9 +8,11 @@ class hello_view {
         start_page("Bonjour");   
 ?>
 
-        <div class="zone-bienvenue-h1">
-            <h1><span class="bienvenue">BONJOUR !</span></h1>
+<main>
+        <div class="card">
+            <h1>BONJOUR !</h1>
         </div>
+</main>
 
 <?php
         end_page();

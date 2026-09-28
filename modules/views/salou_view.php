@@ -8,9 +8,11 @@ class salou_view {
         start_page('salou');
 ?>
 
-        <div class="zone-bienvenue-h1">
-            <h1><span class="bienvenue">SALOU IS THE BEST TEACHER !</span></h1>
+<main>
+        <div class="card">
+            <h1>SALOU IS THE BEST TEACHER !</h1>
         </div>
+</main>
 
 <?php
         end_page();

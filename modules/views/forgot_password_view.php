@@ -8,7 +8,9 @@ class forgot_password_view {
         start_page("Mot de passe oublié");
 ?>
 
-        <h1>Réinitialisation du mot de passe</h1>
+<main>
+    
+        <header><h1>Réinitialisation du mot de passe</h1></header>
 
         <?php if (isset($messageError)): ?>
             <p style="color: red;">
@@ -23,16 +25,18 @@ class forgot_password_view {
         <?php endif; ?>
 
         <!-- Form -->
-        <div class="formulaire">
-            <form action="index.php?action=forgot_password" method="POST" class="contact-formulaire">
+        <div class="form-area">
+            <form action="index.php?action=forgot_password" method="POST">
                 <div>
                     <label for="email">Votre adresse email :</label>
-                    <input type="email" id="email" name="email" placeholder="exemple@domaine.fr" class="contact-input" required>
+                    <input type="email" id="email" name="email" placeholder="exemple@domaine.fr" class="input" required>
                 </div>
 
-                <button type="submit">Envoyer le lien</button>
+                <button type="submit" class="btn">Envoyer le lien</button>
             </form>
         </div>
+        
+</main>
 
 <?php
         end_page();
