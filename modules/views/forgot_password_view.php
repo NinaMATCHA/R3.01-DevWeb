@@ -8,12 +8,12 @@ class forgot_password_view {
         start_page("Mot de passe oublié");
 ?>
 
-        <div class="zone-inscription-connexion">
-            <h1>Récupération du mot de passe</h1>
-        </div>
+        <main>
+            <header>
+                <h1>Récupération du mot de passe</h1>
+            </header>
 
-        <div class="zone-text">
-            <div class="bloc-text i1">
+            <div class="card">
                 <p>
                     <?php if ($token): ?>
                         Veuillez saisir votre nouveau mot de passe pour réinitialiser votre compte.
@@ -22,49 +22,45 @@ class forgot_password_view {
                     <?php endif; ?>
                 </p>
             </div>
-        </div>
 
-        <!-- Affichage messages -->
-        <?php if ($messageError): ?>
-            <p style="color: red;">
-                <?= htmlspecialchars($messageError) ?>
-            </p>
-        <?php endif; ?>
-
-        <?php if (isset($_GET['mail']) && $_GET['mail'] === 'sent'): ?>
-            <p style="color: green;">
-                Un e-mail de réinitialisation vous a été envoyé si votre adresse existe dans notre base.
-            </p>
-        <?php endif; ?>
-
-        <div class="formulaire">
-            <?php if ($token): ?>
-                <!-- Nv mdp -->
-                <form action="index.php?action=mdpOublie" method="post" class="contact-formulaire">
-                    <input type="hidden" name="action_type" value="reset_password" />
-                    <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>" /> <!-- sécurité contre injections-->
-
-                    <input type="password" name="password" placeholder="Nouveau mot de passe" class="contact-input" required />
-
-                    <div class="zone-bouton">
-                        <button type="submit" class="bouton-formulaire">Valider</button>
-                    </div>
-                </form>
-
-            <?php else: ?>
-
-                <!-- Demande mail -->
-                <form action="index.php?action=mdpOublie" method="post" class="contact-formulaire">
-                    <input type="hidden" name="action_type" value="request_reset" />
-
-                    <input type="email" name="email" placeholder="Adresse email" class="contact-input" required />
-
-                    <div class="zone-bouton">
-                        <button type="submit" class="bouton-formulaire">Envoyer le lien</button>
-                    </div>
-                </form>
+            <!-- Messages d'erreur / succes -->
+            <?php if ($messageError): ?>
+                <p style="color: red;">
+                    <?= htmlspecialchars($messageError) ?>
+                </p>
             <?php endif; ?>
-        </div>
+
+            <?php if (isset($_GET['mail']) && $_GET['mail'] === 'sent'): ?>
+                <p style="color: green;">
+                    Un e-mail de réinitialisation vous a été envoyé si votre adresse existe dans notre base.
+                </p>
+            <?php endif; ?>
+
+            <div class="form-area">
+                <?php if ($token): ?>
+                    <!--Formulaire: Nouveau mdp-->
+                    <form action="index.php?action=mdpOublie" method="post">
+                        <input type="hidden" name="action_type" value="reset_password" />
+                        <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>" /> <!--Sécurité contre injections-->
+
+                        <input type="password" name="password" placeholder="Nouveau mot de passe" class="input" required />
+
+                        <button type="submit" class="btn">Valider</button>
+                    </form>
+
+                <?php else: ?>
+
+                    <!--Formulaire: Demande email-->
+                    <form action="index.php?action=mdpOublie" method="post">
+                        <input type="hidden" name="action_type" value="request_reset" />
+
+                        <input type="email" name="email" placeholder="Adresse email" class="input" required />
+
+                        <button type="submit" class="btn">Envoyer le lien</button>
+                    </form>
+                <?php endif; ?>
+            </div>
+        </main>
 
 <?php
         end_page();
