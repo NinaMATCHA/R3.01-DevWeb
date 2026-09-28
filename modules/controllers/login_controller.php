@@ -8,22 +8,34 @@ use modules\models\login_model;
 
 class login_controller {
     public function execute(): void {
-        if (isset($_POST['action']) && !empty($_POST['action'])) {
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                $_login = $_POST['email'];
-                $_password = $_POST['password'];
-                $_action = $_POST['action'];
 
-                if ($_action === 'connection') {
+        session_start();
 
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $_action = filter_input(INPUT_POST, 'action');
+
+            if ($_action === 'connection') {
+
+                $_login = filter_input(INPUT_POST, 'email');
+                $_password = filter_input(INPUT_POST, 'password');
+
+                if ($_login && $_password) {
                     $connectionModel = new login_model(DatabaseConnection::getInstance());
                     $connection = $connectionModel->getConnection($_login, $_password);
-                    if ($connection == ''){
-                        echo "Pas de compte trouvé ou mot de passe erroné";
-                    }
-                    else echo $connection;
 
-                    header('Location: index.php?success=true');
+                    if (!empty($connection)) {
+                        $_SESSION['email'] = $_login;
+                        header('Location: index.php');
+                        exit();
+                    }
+                    else {
+                        header('Location: index.php?action=connection');
+                        exit();
+                    }
+                }
+                else {
+                    header('Location: index.php?action=connection');
                     exit();
                 }
             }

@@ -6,17 +6,6 @@ require '_assets/includes/autoloader.php';
 try {
     if (filter_input(INPUT_GET, 'action')) {
         if ($_GET['action'] === 'connection') {
-            /*
-            Tout ce bloc est en commentaire parce que le code du prof prend deja en compte la gestion des id avec la connection a la bdd
-            pour le moment on veux juste afficher la page trkl
-
-            if (filter_input(INPUT_GET, 'id') && $_GET['id'] > 0 pareil, quand on va gérer la gestion des id) {
-                (new \modules\controllers\Connection())->execute();/*->execute($_GET['id']); --> quand on va gérer la gestion des id
-            }
-            else {
-                throw new ControllerException('Aucun identifiant de billet envoyé');
-            }
-            */
             (new \modules\controllers\login_controller())->execute();
         }
 

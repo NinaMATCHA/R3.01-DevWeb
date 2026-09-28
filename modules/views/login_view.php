@@ -23,7 +23,7 @@ class login_view {
         <div class="formulaire">
             <form action="index.php?action=connection" method="post" class="contact-formulaire">
                 <input type="email" name="email" placeholder="email" class="contact-input" required />
-                <input type="password" name="mdp" placeholder="Mot de passe" class="contact-input" required />
+                <input type="password" name="password" placeholder="Mot de passe" class="contact-input" required />
 
                 <div class="zone-bouton">
                     <button type="submit" name="action" value="connection" class="bouton-formulaire">envoyer</button>
