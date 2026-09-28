@@ -1,33 +1,47 @@
 <?php
 namespace modules\models; 
 use PDO;
+use _assets\includes\DatabaseConnection;
+use exceptions\DatabaseException;
+
+
 class forgot_password_model {
 
-    //Fonction pour sauvegarder le code a usage unique.
-    private function saveCodeInDataBase(string $email, string $code): bool 
-    {
-        $pdo = \DatabaseConnection::getInstance()->getConnection();
-        $sql = "UPDATE users SET reset_code = :code WHERE email = :email";
-        $stmt = $pdo->prepare($sql);
 
-        return $stmt -> execute([
-            ':code'=>$code,
-            ':email'=>$email
-        ]);
+
+    public function __construct(private DatabaseConnection $connection){}
+
+    //Fonction pour sauvegarder le token (une suite de caractere qui se met dans l'URL) a usage unique.
+    private function saveTokenInDataBase(string $email, string $token): bool 
+    {
+       $sql = "UPDATE users SET reset_code = :token WHERE email = :email";
+        $statement = $this->connection->getConnection()->prepare($sql);
+
+        if (!$statement->execute([':token' => $token, ':email' => $email])) {
+            throw new DatabaseException();
+        }
+
+        return true;
     }
 
+
+
+    //Fonction qui envoie le lien avec token par mail pour reset le mdp
     public function sendMail(string $to): bool
     {
-    $code = (string) random_int(100000, 999999);
-    
-    //on verif si y'a pas de probleme pour eviter d'enregistrer des données non valides dans la BDD (genre mail manquant ou faux)
-    if (!$this -> saveCodeInDataBase($to, $code)){
+    $token = bin2hex(random_bytes(32));
+
+    if(!$this->saveTokenInDataBase($to, $token)){
         return false;
     }
 
 
-    $subject = 'Code de récupération de mot de passe';
-    $message = "Bonjour, voici votre code de récupération de mot de passe" . $code;
+    $subject = 'Réinitialisez votre mot de passe';
+
+
+    // Attention, le lien va peut-etre devoir etre changé, le but est de créer un lien unique pour changer de mdp   
+    $link = 'http://localhost/Matheopolis/index.php?action=resetPassword&token='.$token;
+    $message = "Bonjour,\n\n voici votre lien de récupération de mot de passe : \n".$link;
 
     // En-têtes obligatoires / recommandés
     $headers = [
@@ -41,18 +55,31 @@ class forgot_password_model {
     return mail($to, $subject, $message, $headers);
 }
 
-    public function verifyCode(string $email, string $code, string $newPassWord){
-        $pdo = \DatabaseConnection::getInstance()->getConnection();
-        $sql = "SELECT id FROM users WHERE email = :email AND reset_code = :code";
-        $stmt = $pdo -> prepare($sql);
-        $stmt -> execute([':email' => $email, ':code' => $code]);
 
-        if ($stmt ->fetch()){
-            $passwordHash = password_hash($newPassWord, PASSWORD_DEFAULT);
-            $updateSql = "UPDATE users SET mdp = :mdp, reset_code = NULL WHERE email = :email";
-            $updateStmt = $pdo -> prepare($updateSql);
+//Verif la validité du token et change le mdp
+    public function verifyTokenAndChangePassword(string $token, string $newPassword){
+    // recherche de l'utilisateur associé au token dans la BDD
+        $sql = "SELECT id FROM users WHERE reset_code = :token AND reset_code IS NOT NULL";
+        $statement = $this->connection->getConnection()->prepare($sql);
+        
+        if (!$statement->execute([':token' => $token])) {
+            throw new DatabaseException();
+        }
 
-            return $updateStmt -> execute([':mdp' => $passwordHash,':email' => $email]);
+
+        if($user = $statement->fetch(PDO::FETCH_OBJ)){
+            //Hashage du mdp
+            $passwordHash = password_hash($newPassword, PASSWORD_DEFAULT);
+
+            //mtn on fait la maj de la bdd et on détruit le token
+            $updateSql = "UPDATE users SET password = :password, reset_code = NULL WHERE id = :id";
+            $updateStmt = $this->connection->getConnection()->prepare($updateSql);
+
+            if (!$updateStmt->execute([':password' => $passwordHash, ':id' => $user->id])) {
+                throw new DatabaseException();
+            }
+
+            return true;
         }
         return false;
     }
