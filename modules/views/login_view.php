@@ -21,7 +21,7 @@ class login_view {
             </div>
         </div>
 
-        <div class="formulaire">
+        <div class="form-area">
             <form action="index.php?action=connection" method="post">
                 <input type="email" name="email" placeholder="email" class="input" required />
                 <input type="password" name="mdp" placeholder="Mot de passe" class="input" required />

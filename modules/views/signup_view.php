@@ -8,30 +8,30 @@
             start_page("inscription");
 ?>
 
-            <div class="zone-inscription-connexion">
-                <h1>S'inscrire</h1>
+<main>
+        <header>
+            <h1>S'inscrire</h1>
+        </header>
+
+            <div class=card>
+                <p>
+                    Si vous voulez accedez à l'ensemble du site blah blah blah vendez votre âme et inscrivez vous :)
+                </p>
             </div>
 
-            <div class="zone-text">
-                <div class="bloc-text i1">
-                    <p>
-                        Si vous voulez accedez à l'ensemble du site blah blah blah vendez votre âme et inscrivez vous :)
-                    </p>
-                </div>
-            </div>
+            <div class="form-area">
+                <form action="" method="post">
+                    <input type="email" name="email" placeholder="email" class="input" required />
+                    <input type="password" name="password" placeholder="Mot de passe" class="input" required />
+                    <input type="password" name="verif" placeholder="Verification" class="input" required />
 
-            <div class="formulaire">
-                <form action="" method="post" class="contact-formulaire">
-                    <input type="email" name="email" placeholder="email" class="contact-input" required />
-                    <input type="password" name="password" placeholder="Mot de passe" class="contact-input" required />
-                    <input type="password" name="verif" placeholder="Verification" class="contact-input" required />
-
-                    <div class="zone-bouton">
-                        <button type="submit" name="action" value="inscription" class="bouton-formulaire">envoyer</button>
-                        <button type="reset" class="bouton-formulaire">Réinitialiser</button>
+                    <div>
+                        <button type="submit" name="action" value="inscription" class="btn">envoyer</button>
+                        <button type="reset" class="btn">Réinitialiser</button>
                     </div>
                 </form>
             </div>
+</main>
 
 <?php
             end_page();

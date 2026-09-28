@@ -168,7 +168,7 @@ footer {
 
 /* =================== FORMULAIRE */
 
-.formulaire {
+.form-area {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -176,7 +176,7 @@ footer {
     margin-top: 10px;
 }
 
-.formulaire form {
+.form-area form {
     max-width: 400px;
     display: flex;
     flex-direction: column;
