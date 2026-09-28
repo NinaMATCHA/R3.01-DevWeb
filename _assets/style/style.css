@@ -1,14 +1,10 @@
 :root {
-    --light-aqua: aquamarine;
-    --void: #131313;
-    --stone: #1c1712;
-    --stone-2: #251e17;
-    --bone: #ede7da;
-    --bone-dim: #b7af9e;
-    --amethyst: #9b7ec4;
-    --amethyst-glow: #d4b8f5;
-    --deep-blue: #6600ff;
-    --light-blue: #7f85ff;
+    --bg: #141715;
+    --card: #1c221e;
+    --gold: #d4af37;
+    --gold-dim: rgba(212, 175, 55, 0.3);
+    --sand: #ded6c9;
+    --font-titre: 'Cinzel', serif;
 }
 
 * {
@@ -22,40 +18,38 @@ html {
 }
 
 body {
-    background-color: var(--light-aqua);
+    background: var(--bg);
+    color: var(--sand);
     font-family: 'Roboto Mono', monospace;
-    overflow-x: hidden;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 40;
+    position: sticky;
+    z-index: 10;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 32px 48px;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.18px;
-    text-transform: uppercase;
-    color: var(--void);
+    background: #0e1110;
+    padding: 16px 30px;
+    border-bottom: 1px solid var(--gold-dim);
 }
 
 nav ul {
     list-style: none;
     display:flex;
-    gap: 40px;
+    gap: 30px;
 }
 
-nav a {
-    display: inline-block;
-    color: var(--deep-blue);
+nav a, nav button, header a{
+    color: var(--sand);
+    font-family: var(--font-titre);
+    font-size: 0.85rem;
+    text-transform: uppercase;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
+    letter-spacing: 1.5px;
 }
 
 nav a:hover {
@@ -63,111 +57,82 @@ nav a:hover {
     transform: scale(1.1);
 }
 
-footer {
-    background-color: var(--void);
-    color: white;
-    align-items: center;
+nav a:hover, nav button:hover {
+    color: var(--gold);
+}
+
+.dropdown {
+    position: relative; 
+}
+
+.dropdown button {
+    background: none;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 8px 14px;
+}
+.menu {
+    display: none; 
+    position: absolute; 
+    right: 0; 
+    top: 100%;
+    background: var(--card);
+    border: 1px solid var(--gold-dim);
+    min-width: 160px;
+    padding: 8px 0;
+}
+
+.dropdown:hover .menu { 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.menu a { 
+    padding: 10px 16px; 
+    font-size: 0.75rem;
+    
+}
+.menu a:hover { 
+    background: rgba(212, 175, 55, 0.1); 
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    gap: 24px;
+}
+
+header {
     text-align: center;
+    border-bottom: 1px solid var(--gold-dim);
+    padding-bottom: 20px;
 }
 
-.zone-bienvenue-h1 {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-
-    /* Position au centre */
-    margin: 100px auto; /* top right bottom left */
-
-    /* Couleur */
-    background-color: var(--bone);
-    border-radius: 10px;
-    border: 2px solid var(--void);
-
-    /* Taille */
-    height: 100px;
-    width: 340px;
+h1, h2 {
+    font-family: var(--font-titre);
+    margin: 20px auto;
 }
 
-.bienvenue {
-    /* On enleve par defaut le margin du h1 */
-    margin: 0;
-    text-align: center;
+.small {
+    font-family: var(--font-titre);
+    color: var(--gold);
 }
 
-.zone-text {
-    display: flex;
-
-    /* Position du texte */
-    text-align: center;
-    justify-content: center;
-
-    /* Style du texte */
-    font-size: 1.7em;
-    color: var(--void);
+.card {
+    background: var(--card);
+    border: 1px solid var(--gold-dim);
+    border-left: 3px solid var(--gold);
+    padding: 24px;
 }
 
-.bloc-text {
-    margin: 100px auto;
-    background-color: var(--bone);
-    border-radius: 20px;
-    padding: 10px;
-    border: 2px solid var(--void);
+.card.parchment {
+    background: #eae2d3;
+    color: #222;
+    border-left-color: #8c6d37;
 }
 
-.bloc-text.b1 {
-    /* Taille du premier bloc */
-    width: 800px;
-    height: 140px;
 
-    /* Style */
-    background-color: var(--bone);
-    border-radius: 20px;
-    border: 2px solid var(--void);
-}
-
-.bloc-text.b2 {
-    /* Taille du deuxieme bloc */
-    width: 65em;
-    background-color: var(--amethyst);
-    border-radius: 40px;
-    border: 2px solid var(--void);
-}
-
-/* BOUTON */
-
-.zone-bouton {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-    margin-bottom: 60px;
-    gap: 60px;
-}
-
-.zone-bouton-profil {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.bouton {
-    /* Styme */
-    background-color: white;
-    color: var(--void);
-    border: 2px solid black;
-    border-radius: 10px;
-
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.bouton:hover {
-    background-color: var(--bone-dim);
-    color: black;
-    transform: scale(1.1);
-}
 
 /* ------- PARTIE INSCRIPTION -------- */
 
@@ -200,8 +165,6 @@ footer {
     border-radius: 20px;
     border: 2px solid var(--void);
 }
-
-/* FORMULAIRE */
 
 /* FORMULAIRE */
 
@@ -252,4 +215,13 @@ footer {
     background-color: var(--bone-dim);
     color: black;
     transform: scale(1.1);
+}
+
+footer {
+    background: #0e1110;
+    border-top: 1px solid var(--gold-dim);
+    color: grey;
+    padding: 24px;
+    align-items: center;
+    text-align: center;
 }
