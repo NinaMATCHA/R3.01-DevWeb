@@ -2,10 +2,9 @@
 
 namespace modules\views;
 
-class bonjour_view {
-    public function show(): void
-    { // PSR-12 : Accolade à la ligne pour la méthode
-        ob_start();  
+class hello_view {
+    public function show(): void {
+        ob_start();
 ?>
 
 <main>

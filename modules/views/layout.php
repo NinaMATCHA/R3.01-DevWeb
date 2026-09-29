@@ -2,13 +2,20 @@
 
 namespace modules\views;
 
-class Layout { // PSR-12: opening brace next line
-    public function __construct(private string $title, private string $content) {}
-    public function show(): void { // PSR-12: opening brace next line
+class Layout
+{
+    public function __construct(
+        private string $title,
+        private string $content
+    ) {}
+
+    public function show(): void
+    {
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title><?php echo $title; ?></title>
+    <meta charset="utf-8">
+    <title><?= htmlspecialchars($this->title); ?></title>
     <link rel="stylesheet" href="_assets/style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,38 +25,37 @@ class Layout { // PSR-12: opening brace next line
 
 <nav>
     <ul>
-        <li><a href="index.php">BIENVENUE</a></li>
+        <li><a href="index.php">Bienvenue</a></li>
         <li><a href="index.php?action=salou">SALOU</a></li>
         <li><a href="index.php?action=nevot">NEVOT</a></li>
         <li><a href="index.php?action=bonjour">BONJOUR</a></li>
     </ul>
+    <div class="dropdown">
+        <button type="button">Menu ▾</button>
+        <div class="menu">
+            <a href="index.php?action=inscription">Inscription</a>
+            <a href="index.php?action=connection">Connexion</a>
+            <a href="index.php?action=profil">Profil</a>
+        </div>
+    </div>
 </nav>
 
-
-<head>
-    <meta charset="utf-8"/>
-    <title><?= $this->title; ?></title>
-    <link href="style.css" rel="stylesheet"/>
-</head>
-
-<body>
+<main>
     <?= $this->content; ?>
+</main>
+
+<footer>
+    <h2>Mention légales</h2>
+    <p>
+        Le présent du site à été réalisé par FRANCOIS Ewan, JAMBERT Aurele, KHADISSOVA Lezina, 
+        MATIC CHARBIT Nina et MOYENIN Nicolas.
+
+        Hébergé par alwaysdata.
+    </p>
+</footer>
+
 </body>
-
-<div class="zone-footer">
-    <footer class="footer">
-        <h1>Mentions légales</h1>
-        <p>
-            Le présent site a été réalisé par FRANCOIS Ewan, JAMBERT Aurele, KHADISSOVA Lezina, 
-            MATIC CHARBIT Nina et MOYENIN Nicolas.<br>
-            Hébergé par alwaysdata.
-        </p>
-    </footer>
-</div>
-
-</body>
-
 </html>
-    <?php
+<?php
     }
 }
