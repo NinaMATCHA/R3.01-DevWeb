@@ -3,9 +3,9 @@
 namespace modules\views;
 
 class bonjour_view {
-    public function show(): void {
-        require '_assets/utils/utils.inc.php';
-        start_page("Bonjour");   
+    public function show(): void
+    { // PSR-12 : Accolade à la ligne pour la méthode
+        ob_start();  
 ?>
 
         <div class="zone-bienvenue-h1">
@@ -13,7 +13,7 @@ class bonjour_view {
         </div>
 
 <?php
-        end_page();
+        (new \modules\views\layout('Bonjour', ob_get_clean()))->show();
     }
 }
 ?>

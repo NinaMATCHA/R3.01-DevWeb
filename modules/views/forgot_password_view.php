@@ -4,8 +4,7 @@ namespace modules\views;
 
 class forgot_password_view {
     public function show(): void {
-        require '_assets/utils/utils.inc.php';
-        start_page("Mot de passe oublié");
+        ob_start();
 ?>
 
         <h1>Réinitialisation du mot de passe</h1>
@@ -35,7 +34,7 @@ class forgot_password_view {
         </div>
 
 <?php
-        end_page();
+        (new \modules\views\layout('Mot de passe oublié', ob_get_clean()))->show();
     }
 }
 ?>

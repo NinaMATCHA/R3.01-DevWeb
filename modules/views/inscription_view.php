@@ -4,8 +4,7 @@
 
     class inscription_view {
         public function show(): void {
-            require '_assets/utils/utils.inc.php';
-            start_page("inscription");
+            ob_start();
 ?>
 
             <div class="zone-inscription-connexion">
@@ -37,7 +36,7 @@
             </div>
 
 <?php
-            end_page();
+            (new \modules\views\layout('Inscription', ob_get_clean()))->show();
         }
     }
 

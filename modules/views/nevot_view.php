@@ -3,9 +3,10 @@
 namespace modules\views;
 
 class nevot_view {
-    public function show(): void {
-        require '_assets/utils/utils.inc.php';   
-        start_page("Nevot");
+    public function show(): void
+    { // PSR-12 : Accolade à la ligne pour la méthode
+        ob_start();
+        
 ?>
 
         <div class="zone-bienvenue-h1">
@@ -13,7 +14,7 @@ class nevot_view {
         </div>
 
 <?php
-        end_page();
+        (new \modules\views\layout('Nevot', ob_get_clean()))->show();
     }
 }
 ?>

@@ -4,12 +4,11 @@ namespace modules\views; /* Toujours en premier */
 
 class connection_view {
     public function show(): void {
-        require '_assets/utils/utils.inc.php';
-        start_page("connection");
+        ob_start();
 ?>
 
         <div class="zone-inscription-connexion">
-            <h1>Connection</h1>
+            <h1>Connexion</h1>
         </div>
 
         <div class="zone-text">
@@ -26,7 +25,7 @@ class connection_view {
                 <input type="password" name="mdp" placeholder="Mot de passe" class="contact-input" required />
 
                 <div class="zone-bouton">
-                    <button type="submit" name="action" value="connection" class="bouton-formulaire">envoyer</button>
+                    <button type="submit" name="action" value="connection" class="bouton-formulaire">Envoyer</button>
                     <button type="reset" class="bouton-formulaire">Réinitialiser</button>
                 </div>
             </form>
@@ -37,7 +36,7 @@ class connection_view {
         </div>
 
 <?php
-        end_page();
+        (new \modules\views\layout('Connexion', ob_get_clean()))->show();
     }
 }
 ?>
