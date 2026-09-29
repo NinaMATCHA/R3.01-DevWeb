@@ -18,7 +18,7 @@ class profil_view {
                     Vous ne possédez pas de compte, créez en un :
             </p>
                 
-            <a href="index.php?action=inscription">
+            <a href="index.php?action=signup">
                 <button type="button" class="btn">Inscrivez-vous</button>
             </a>
         </div>
@@ -29,7 +29,7 @@ class profil_view {
                     Vous avez déjà un compte, connectez vous :
             </p>
 
-            <a href="index.php?action=connection">
+            <a href="index.php?action=login">
                 <button type="button" class="btn">Connectez-vous</button>
             </a>
         </div>

@@ -22,14 +22,14 @@ class login_view {
             </div>
 
             <div class="form-area">
-                <form action="index.php?action=connection" method="post">
+                <form action="index.php?action=login" method="post">
                     <label for="email">Votre adresse email :</label>
                     <input type="email" name="email" placeholder="exemple@domaine.fr" class="input" required />
                     <label for="password">Votre Mot de Passe :</label>
                     <input type="password" name="password" placeholder="Mot de passe" class="input" required />
 
                     <div>
-                        <button type="submit" name="action" value="connection" class="btn">Envoyer</button>
+                        <button type="submit" name="action" value="logUser" class="btn">Envoyer</button>
                         <button type="reset" class="btn">Réinitialiser</button>
                     </div>
                 </form>

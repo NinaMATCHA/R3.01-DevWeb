@@ -15,7 +15,7 @@ class login_controller {
 
             $_action = filter_input(INPUT_POST, 'action');
 
-            if ($_action === 'connection') {
+            if ($_action === 'logUser') {
 
                 $_login = filter_input(INPUT_POST, 'email');
                 $_password = filter_input(INPUT_POST, 'password');
@@ -30,12 +30,12 @@ class login_controller {
                         exit();
                     }
                     else {
-                        header('Location: index.php?action=connection');
+                        header('Location: index.php?action=login');
                         exit();
                     }
                 }
                 else {
-                    header('Location: index.php?action=connection');
+                    header('Location: index.php?action=login');
                     exit();
                 }
             }

@@ -26,9 +26,10 @@ function start_page($title): void
     <div class="dropdown">
         <button type="button">Menu ▾</button>
         <div class="menu">
-            <a href="index.php?action=inscription">Inscription</a>
-            <a href="index.php?action=connection">Connexion</a>
+            <a href="index.php?action=signup">Inscription</a>
+            <a href="index.php?action=login">Connexion</a>
             <a href="index.php?action=profil">Profil</a>
+            <a href="signout.php">Deconnexion</a>
         </div>
     </div>
 </nav>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="SshConfigs">
-    <configs>
-      <sshConfig authType="PASSWORD" host="ssh-ninamc.alwaysdata.net" id="df2045b7-36d0-489c-9f45-0e211fdf499b" port="22" nameFormat="DESCRIPTIVE" username="ninamc" useOpenSSHConfig="true" />
-    </configs>
-  </component>
-</project>

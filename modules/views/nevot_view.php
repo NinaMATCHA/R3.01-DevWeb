@@ -4,8 +4,10 @@ namespace modules\views;
 
 class nevot_view {
     public function show(): void {
-        require '_assets/utils/utils.inc.php';   
-        start_page("Nevot");
+        session_start();
+        if (isset($_SESSION['email'])) {
+            require '_assets/utils/utils.inc.php';
+            start_page("Nevot");
 ?>
 
 <main>
@@ -15,7 +17,12 @@ class nevot_view {
 </main>
 
 <?php
-        end_page();
+            end_page();
+        }
+        else {
+            header("location:index.php?action=login");
+            exit();
+        }
     }
 }
 ?>

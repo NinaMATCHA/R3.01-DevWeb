@@ -5,11 +5,11 @@ require '_assets/includes/autoloader.php';
 
 try {
     if (filter_input(INPUT_GET, 'action')) {
-        if ($_GET['action'] === 'connection') {
+        if ($_GET['action'] === 'login') {
             (new \modules\controllers\login_controller())->execute();
         }
 
-        else if ($_GET['action'] === 'inscription') {
+        else if ($_GET['action'] === 'signup') {
             (new \modules\controllers\signup_controller())->execute();
         }
 
