@@ -8,9 +8,11 @@ class bonjour_view {
         ob_start();  
 ?>
 
-        <div class="zone-bienvenue-h1">
-            <h1><span class="bienvenue">BONJOUR !</span></h1>
+<main>
+        <div class="card">
+            <h1>BONJOUR !</h1>
         </div>
+</main>
 
 <?php
         (new \modules\views\layout('Bonjour', ob_get_clean()))->show();

@@ -1,13 +1,16 @@
 <?php
 
-    function my_autoload(string $class): void {
-        $racine = __DIR__ . '/../../';
-        $chemin = $racine . str_replace('\\', '/', $class) . '.php';
-        
-        if (file_exists($chemin)) {
-            require $chemin;
+    class Autoloader {
+        public static function register() {
+            spl_autoload_register(function ($class) {
+                $fichier = str_replace('\\', '/', $class) . '.php';
+                if (file_exists($fichier)) {
+                    require_once $fichier;
+                    return true;
+                }
+                return false;
+            });
         }
     }
-    
-    spl_autoload_register('my_autoload');
+    Autoloader::register();
 ?>

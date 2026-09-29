@@ -7,31 +7,59 @@ class forgot_password_view {
         ob_start();
 ?>
 
-        <h1>Réinitialisation du mot de passe</h1>
+        <main>
+            <header>
+                <h1>Récupération du mot de passe</h1>
+            </header>
 
-        <?php if (isset($messageError)): ?>
-            <p style="color: red;">
-                <?= htmlspecialchars($messageError) ?>
-            </p>
-        <?php endif; ?>
+            <div class="card">
+                <p>
+                    <?php if ($token): ?>
+                        Veuillez saisir votre nouveau mot de passe pour réinitialiser votre compte.
+                    <?php else: ?>
+                        Saisissez votre adresse email. Si elle est associée à un compte, un lien de réinitialisation vous sera envoyé par mail.
+                    <?php endif; ?>
+                </p>
+            </div>
 
-        <?php if (isset($messageSuccess)): ?>
-            <p style="color: green;">
-                <?= htmlspecialchars($messageSuccess) ?>
-            </p>
-        <?php endif; ?>
+            <!-- Messages d'erreur / succes -->
+            <?php if ($messageError): ?>
+                <p style="color: red;">
+                    <?= htmlspecialchars($messageError) ?>
+                </p>
+            <?php endif; ?>
 
-        <!-- Form -->
-        <div class="formulaire">
-            <form action="index.php?action=forgot_password" method="POST" class="contact-formulaire">
-                <div>
-                    <label for="email">Votre adresse email :</label>
-                    <input type="email" id="email" name="email" placeholder="exemple@domaine.fr" class="contact-input" required>
-                </div>
+            <?php if (isset($_GET['mail']) && $_GET['mail'] === 'sent'): ?>
+                <p style="color: green;">
+                    Un e-mail de réinitialisation vous a été envoyé si votre adresse existe dans notre base.
+                </p>
+            <?php endif; ?>
 
-                <button type="submit">Envoyer le lien</button>
-            </form>
-        </div>
+            <div class="form-area">
+                <?php if ($token): ?>
+                    <!--Formulaire: Nouveau mdp-->
+                    <form action="index.php?action=mdpOublie" method="post">
+                        <input type="hidden" name="action_type" value="reset_password" />
+                        <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>" /> <!--Sécurité contre injections-->
+
+                        <input type="password" name="password" placeholder="Nouveau mot de passe" class="input" required />
+
+                        <button type="submit" class="btn">Valider</button>
+                    </form>
+
+                <?php else: ?>
+
+                    <!--Formulaire: Demande email-->
+                    <form action="index.php?action=mdpOublie" method="post">
+                        <input type="hidden" name="action_type" value="request_reset" />
+
+                        <input type="email" name="email" placeholder="Adresse email" class="input" required />
+
+                        <button type="submit" class="btn">Envoyer le lien</button>
+                    </form>
+                <?php endif; ?>
+            </div>
+        </main>
 
 <?php
         (new \modules\views\layout('Mot de passe oublié', ob_get_clean()))->show();
