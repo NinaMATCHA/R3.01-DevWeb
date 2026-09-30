@@ -8,7 +8,7 @@ class profil_view {
 ?>
 
 <header>
-    h1>Profil</h1>
+    <h1>Profil</h1>
 </header>
 
 <div class="card">

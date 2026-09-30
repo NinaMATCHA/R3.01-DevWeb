@@ -6,5 +6,9 @@
         header("Location: index.php");
         exit();
     }
+    else if ($_SESSION['email'] === null) {
+        header("Location: index.php");
+        exit();
+    }
 
 ?>
