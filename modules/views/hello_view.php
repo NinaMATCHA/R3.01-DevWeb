@@ -7,11 +7,9 @@ class hello_view {
         ob_start();
 ?>
 
-<main>
-        <div class="card">
-            <h1>BONJOUR !</h1>
-        </div>
-</main>
+<div class="card">
+    <h1>BONJOUR !</h1>
+</div>
 
 <?php
         (new \modules\views\layout('Bonjour', ob_get_clean()))->show();

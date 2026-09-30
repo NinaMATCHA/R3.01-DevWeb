@@ -7,8 +7,8 @@ class error {
 
     public function show(): void {
         ?>
-        <h1>Oops</h1>
-        <p><?= htmlspecialchars($this->message) ?>
+        <header><h1>Oops</h1></header>
+        <p class="card"><?= htmlspecialchars($this->message) ?>
         <a href="index.php"> Retour à l'acceuil</a>
         <?php
     }

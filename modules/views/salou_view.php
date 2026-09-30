@@ -7,11 +7,9 @@ class salou_view {
         ob_start();
 ?>
 
-<main>
-        <div class="card">
-            <h1>SALOU IS THE BEST TEACHER !</h1>
-        </div>
-</main>
+<div class="card">
+    <h1>SALOU IS THE BEST TEACHER !</h1>
+</div>
 
 <?php
         (new \modules\views\layout('Salou', ob_get_clean()))->show();

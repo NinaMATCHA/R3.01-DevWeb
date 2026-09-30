@@ -7,32 +7,30 @@ class profil_view {
         ob_start();
 ?>
 
-<main>
-        <header>
-            <h1>Profil</h1>
-        </header>
+<header>
+    h1>Profil</h1>
+</header>
 
-        <div class="card">
-            <p>
-                    Vous ne possédez pas de compte, créez en un :
-            </p>
+<div class="card">
+    <p>
+    Vous ne possédez pas de compte, créez en un :
+    </p>
                 
-            <a href="index.php?action=signup">
-                <button type="button" class="btn">Inscrivez-vous</button>
-            </a>
-        </div>
+    <a href="index.php?action=signup">
+        <button type="button" class="btn">Inscrivez-vous</button>
+    </a>
+</div>
 
 
-        <div class="card">
-            <p>
-                    Vous avez déjà un compte, connectez vous :
-            </p>
+<div class="card">
+    <p>
+    Vous avez déjà un compte, connectez vous :
+    </p>
 
-            <a href="index.php?action=login">
-                <button type="button" class="btn">Connectez-vous</button>
-            </a>
-        </div>
-</main>
+    <a href="index.php?action=login">
+        <button type="button" class="btn">Connectez-vous</button>
+    </a>
+</div>
 
 <?php
         (new \modules\views\layout('Profil', ob_get_clean()))->show();
