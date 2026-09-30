@@ -5,7 +5,7 @@ namespace modules\controllers;
 class hello_controller {
     public function execute(): void {
         session_start();
-        if (isset($_SESSION['login'])) {
+        if (isset($_SESSION['email'])) {
             (new \modules\views\hello_view())->show();
         }
         else {

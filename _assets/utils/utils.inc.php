@@ -19,9 +19,9 @@ function start_page($title): void
 <nav>
     <ul>
         <li><a href="index.php">Bienvenue</a></li>
-        <li><a href="index.php?action=salou">SALOU</a></li>
-        <li><a href="index.php?action=nevot">Nevot</a></li>
-        <li><a href="index.php?action=bonjour">BONJOUR</a></li>
+            <li><a href="index.php?action=salou">SALOU</a></li>
+            <li><a href="index.php?action=nevot">Nevot</a></li>
+            <li><a href="index.php?action=bonjour">BONJOUR</a></li>
     </ul>
     <div class="dropdown">
         <button type="button">Menu ▾</button>

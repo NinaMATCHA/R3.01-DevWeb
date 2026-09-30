@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="db952645-4a6a-46ec-a78b-c1456be54daf" name="serveur" url="http://ninamc.alwaysdata.net/index.php">
+        <fileTransfer rootFolder="/home/ninamc/www" accessType="SFTP" host="ssh-ninamc.alwaysdata.net" port="22" sshConfigId="f43e7737-8543-472a-9d1f-4a70d8dba16a" sshConfig="ninamc@ssh-ninamc.alwaysdata.net:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
