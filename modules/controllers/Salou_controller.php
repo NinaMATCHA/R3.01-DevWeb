@@ -4,7 +4,14 @@ namespace modules\controllers;
 
 class Salou_controller {
     public function execute(): void {
-        (new \modules\views\salou_view())->show();
+        session_start();
+        if (isset($_SESSION['email'])) {
+            (new \modules\views\salou_view())->show();
+        }
+        else {
+            header('location: index.php?action=login');
+            exit();
+        }
     }
 }
 

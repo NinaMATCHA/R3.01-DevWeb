@@ -13,6 +13,12 @@ class signup_controller {
                 $_password = $_POST['password'];
                 $_action = $_POST['action'];
 
+                if (empty($_login) || empty($_password)) {
+                    $_SERVER['erreur'] = 'Veuillez remplir le formulaire';
+                    header('location: index.php?action=signup');
+                    exit();
+                }
+
                 if ($_action === 'inscription') {
 
                     $inscriptionModel = new signup_model(DatabaseConnection::getInstance());

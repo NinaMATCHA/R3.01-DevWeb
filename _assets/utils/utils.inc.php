@@ -19,16 +19,23 @@ function start_page($title): void
 <nav>
     <ul>
         <li><a href="index.php">Bienvenue</a></li>
+<<<<<<< HEAD
+            <li><a href="index.php?action=salou">SALOU</a></li>
+            <li><a href="index.php?action=nevot">Nevot</a></li>
+            <li><a href="index.php?action=bonjour">BONJOUR</a></li>
+=======
         <li><a href="index.php?action=salou">SALOU</a></li>
         <li><a href="index.php?action=nevot">NEVOT</a></li>
         <li><a href="index.php?action=bonjour">BONJOUR</a></li>
+>>>>>>> f6a8f7dc5fd785e9ac5af08634f2be30c2e65b45
     </ul>
     <div class="dropdown">
         <button type="button">Menu ▾</button>
         <div class="menu">
-            <a href="index.php?action=inscription">Inscription</a>
-            <a href="index.php?action=connection">Connexion</a>
+            <a href="index.php?action=signup">Inscription</a>
+            <a href="index.php?action=login">Connexion</a>
             <a href="index.php?action=profil">Profil</a>
+            <a href="signout.php">Deconnexion</a>
         </div>
     </div>
 </nav>

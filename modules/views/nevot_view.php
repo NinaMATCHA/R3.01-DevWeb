@@ -9,11 +9,9 @@ class nevot_view {
         
 ?>
 
-<main>
-        <div class="card">
-            <h1>NEVOT PHP MASTER LVL 1000000000  !</h1>
-        </div>
-</main>
+<div class="card">
+    <h1>NEVOT PHP MASTER LVL 1000000000  !</h1>
+</div>
 
 <?php
         (new \modules\views\layout('Nevot', ob_get_clean()))->show();
