@@ -4,8 +4,7 @@ namespace modules\views; /* Toujours en premier */
 
 class login_view {
     public function show(): void {
-        require '_assets/utils/utils.inc.php';
-        start_page("connection");
+        ob_start();
 ?>
 
 <main>
@@ -39,7 +38,7 @@ class login_view {
 </main>
 
 <?php
-        end_page();
+        (new \modules\views\layout('Connection', ob_get_clean()))->show();
     }
 }
 ?>

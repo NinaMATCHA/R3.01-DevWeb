@@ -3,9 +3,8 @@
 namespace modules\views;
 
 class forgot_password_view {
-    public function show($token = null, $messageError = null): void {
-        require '_assets/utils/utils.inc.php';
-        start_page("Mot de passe oublié");
+    public function show(): void {
+        ob_start();
 ?>
 
         <main>
@@ -63,7 +62,7 @@ class forgot_password_view {
         </main>
 
 <?php
-        end_page();
+        (new \modules\views\layout('Mot de passe oublié', ob_get_clean()))->show();
     }
 }
 ?>

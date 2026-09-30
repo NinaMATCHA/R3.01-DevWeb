@@ -4,8 +4,7 @@ namespace modules\views; /* Toujours en premier */
 
 class legal_notice_view {
     public function show(): void {
-        require '_assets/utils/utils.inc.php';
-        start_page("Bienvenue");
+        ob_start();
 ?>
 
 <section class="legal_notice">
@@ -63,7 +62,7 @@ class legal_notice_view {
 </section>
 
 <?php
-        end_page();
+        (new \modules\views\layout('Bienvenue', ob_get_clean()))->show();
     }
 }
 ?>

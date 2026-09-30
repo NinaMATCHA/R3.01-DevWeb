@@ -4,8 +4,7 @@
 
     class signup_view {
         public function show(): void {
-            require '_assets/utils/utils.inc.php';
-            start_page("inscription");
+            ob_start();
 ?>
 
 <main>
@@ -37,7 +36,7 @@
 </main>
 
 <?php
-            end_page();
+            (new \modules\views\layout('Inscription', ob_get_clean()))->show();
         }
     }
 
