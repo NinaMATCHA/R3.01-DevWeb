@@ -4,8 +4,7 @@ namespace modules\views;
 
 class salou_view {
     public function show(): void {
-        require '_assets/utils/utils.inc.php';
-        start_page('salou');
+        ob_start();
 ?>
 
 <main>
@@ -15,7 +14,7 @@ class salou_view {
 </main>
 
 <?php
-        end_page();
+        (new \modules\views\layout('Salou', ob_get_clean()))->show();
     }
 }
 

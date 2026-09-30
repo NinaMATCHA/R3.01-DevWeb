@@ -4,8 +4,7 @@ namespace modules\views;
 
 class hello_view {
     public function show(): void {
-        require '_assets/utils/utils.inc.php';
-        start_page("Bonjour");   
+        ob_start();
 ?>
 
 <main>
@@ -15,7 +14,7 @@ class hello_view {
 </main>
 
 <?php
-        end_page();
+        (new \modules\views\layout('Bonjour', ob_get_clean()))->show();
     }
 }
 ?>

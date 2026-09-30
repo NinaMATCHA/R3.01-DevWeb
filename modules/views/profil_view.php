@@ -4,8 +4,7 @@ namespace modules\views;
 
 class profil_view {
     public function show(): void {
-        require '_assets/utils/utils.inc.php';
-        start_page("profil");
+        ob_start();
 ?>
 
 <main>
@@ -36,7 +35,7 @@ class profil_view {
 </main>
 
 <?php
-        end_page();
+        (new \modules\views\layout('Profil', ob_get_clean()))->show();
     }
 }
 ?>

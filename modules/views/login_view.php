@@ -4,9 +4,14 @@ namespace modules\views; /* Toujours en premier */
 
 class login_view {
     public function show(): void {
+<<<<<<< HEAD
         require '_assets/utils/utils.inc.php';
         start_page("connection");
         ?>
+=======
+        ob_start();
+?>
+>>>>>>> f6a8f7dc5fd785e9ac5af08634f2be30c2e65b45
 
         <main>
             <header>
@@ -21,6 +26,7 @@ class login_view {
                 </div>
             </div>
 
+<<<<<<< HEAD
             <div class="form-area">
                 <form action="index.php?action=login" method="post">
                     <label for="email">Votre adresse email :</label>
@@ -40,6 +46,10 @@ class login_view {
 
         <?php
         end_page();
+=======
+<?php
+        (new \modules\views\layout('Connection', ob_get_clean()))->show();
+>>>>>>> f6a8f7dc5fd785e9ac5af08634f2be30c2e65b45
     }
 }
 ?>
