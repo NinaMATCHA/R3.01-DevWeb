@@ -14,7 +14,7 @@ try {
         }
 
         else if ($_GET['action'] === 'profil') {
-            (new \modules\controllers\Profil_controller())->execute();
+            (new \modules\controllers\account_controller())->execute();
         }
 
         else if ($_GET['action'] === 'salou') {

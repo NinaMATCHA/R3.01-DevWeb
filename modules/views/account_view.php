@@ -2,7 +2,7 @@
 
 namespace modules\views;
 
-class compte_view {
+class account_view {
     public function show(): void {
         ob_start();
 ?>

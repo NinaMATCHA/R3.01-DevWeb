@@ -2,9 +2,9 @@
 
 namespace modules\controllers;
 
-class Profil_controller {
+class account_controller {
     public function execute(): void {
-        (new \modules\views\compte_view())->show();
+        (new \modules\views\account_view())->show();
     }
 }
 
