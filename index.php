@@ -34,13 +34,13 @@ try {
         }
 
         else {
-            throw new ControllerException('La page que vous recherchez n\'existe pas');
+            throw new Exception('La page que vous recherchez n\'existe pas');
         }
     }
     else {
         (new \modules\controllers\Homepage\Homepage_controller())->execute();
     }
-} catch (ControllerException $e) {
+} catch (Exception $e) {
     (new \modules\views\error($e->getMessage()))->show();
 }
 ?>

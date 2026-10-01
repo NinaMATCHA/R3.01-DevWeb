@@ -15,7 +15,7 @@ class login_model {
         $statement = $this->connection->getConnection()->prepare('SELECT login, password FROM users WHERE login = :login AND password = :password;');
 
         if (!$statement->execute([':login' => $_login, ':password' => $_password])) {
-            throw new DatabaseException();
+            throw new Exception('Le login ou le mot de passe est incorrect');
         }
 
         $connection = [];
