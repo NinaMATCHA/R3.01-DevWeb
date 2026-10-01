@@ -38,7 +38,7 @@ try {
         }
     }
     else {
-        (new \modules\controllers\Homepage\Homepage_controller())->execute();
+        (new \modules\controllers\Homepage_controller())->execute();
     }
 } catch (Exception $e) {
     (new \modules\views\error($e->getMessage()))->show();

@@ -1,6 +1,6 @@
 <?php
 
-namespace modules\controllers\Homepage;
+namespace modules\controllers;
 
 class Homepage_controller {
     public function execute(): void {

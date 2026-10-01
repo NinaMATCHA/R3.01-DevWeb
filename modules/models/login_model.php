@@ -12,10 +12,10 @@ class login_model {
     #retourne les resultats que l'on veut de notre query ( je verrai plus tard mais faudra comparer les login avc WHERE )
     public function getConnection(String $_login, $_password): array
     {
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-        $statement = $this->connection->getConnection()->prepare('SELECT login, password FROM users WHERE login = :login AND password = :passwordHash;');
+        $passwordHash = password_hash($_password, PASSWORD_DEFAULT);
+        $statement = $this->connection->getConnection()->prepare('SELECT login, password FROM users WHERE login = :login AND password = :password;');
 
-        if (!$statement->execute([':login' => $_login, ':passwordHash' => $_password])) {
+        if (!$statement->execute([':login' => $_login, ':password' => $passwordHash])) {
             throw new Exception('Le login ou le mot de passe est incorrect');
         }
 
