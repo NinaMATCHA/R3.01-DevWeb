@@ -13,7 +13,7 @@ class forgot_password_model {
     //Fonction pour sauvegarder le token (une suite de caractere qui se met dans l'URL) a usage unique.
     private function saveTokenInDataBase(string $email, string $token): bool 
     {
-       $sql = "UPDATE users SET reset_code = :token, expiration_date = DATE_ADD(NOW(), INTERVAL 15 MINUTE) WHERE email = :email";
+       $sql = "UPDATE users SET reset_code = :token, expiration_date = DATE_ADD(NOW(), INTERVAL 15 MINUTE) WHERE login = :email";
         $statement = $this->connection->getConnection()->prepare($sql);
 
         if (!$statement->execute([':token' => $token, ':email' => $email])) {
@@ -31,7 +31,7 @@ class forgot_password_model {
     $token = bin2hex(random_bytes(32));
 
     if(!$this->saveTokenInDataBase($to, $token)){
-        return false;
+        return true;
     }
 
 
@@ -58,7 +58,7 @@ class forgot_password_model {
 //Verif la validité du token et change le mdp
     public function verifyTokenAndChangePassword(string $token, string $newPassword):bool{
     // recherche de l'utilisateur associé au token dans la BDD
-       $sql = "SELECT id FROM users 
+       $sql = "SELECT login FROM users 
                 WHERE reset_code = :token 
                   AND reset_code IS NOT NULL 
                   AND expiration_date > NOW()";
@@ -78,10 +78,10 @@ class forgot_password_model {
                           SET password = :password, 
                               reset_code = NULL, 
                               expiration_date = NULL 
-                          WHERE id = :id";
+                          WHERE login = :login";
             $updateStmt = $this->connection->getConnection()->prepare($updateSql);
 
-            if (!$updateStmt->execute([':password' => $passwordHash, ':id' => $user->id])) {
+            if (!$updateStmt->execute([':password' => $passwordHash, ':login' => $user->login])) {
                 throw new \Exception("Erreur de base de données.");
             }
 
