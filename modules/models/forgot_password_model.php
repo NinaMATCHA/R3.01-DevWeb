@@ -2,7 +2,6 @@
 namespace modules\models; 
 use PDO;
 use _assets\includes\DatabaseConnection;
-use exceptions\DatabaseException;
 
 
 class forgot_password_model {
@@ -21,7 +20,7 @@ class forgot_password_model {
             throw new DatabaseException();
         }
 
-        return true;
+        return $statement->rowCount() > 0;
     }
 
 
@@ -45,8 +44,8 @@ class forgot_password_model {
 
     // En-têtes obligatoires / recommandés
     $headers = [
-        'From' => 'expediteur@ton-domaine.com',
-        'Reply-To' => 'expediteur@ton-domaine.com',
+        'From' => 'no-reply@ninamc.alwaysdata.net',
+        'Reply-To' => 'no-reply@ninamc.alwaysdata.net',
         'Content-Type' => 'text/plain; charset=utf-8',
         'X-Mailer' => 'PHP/' . phpversion()
     ];
@@ -57,7 +56,7 @@ class forgot_password_model {
 
 
 //Verif la validité du token et change le mdp
-    public function verifyTokenAndChangePassword(string $token, string $newPassword){
+    public function verifyTokenAndChangePassword(string $token, string $newPassword):bool{
     // recherche de l'utilisateur associé au token dans la BDD
         $sql = "SELECT id FROM users WHERE reset_code = :token AND reset_code IS NOT NULL";
         $statement = $this->connection->getConnection()->prepare($sql);

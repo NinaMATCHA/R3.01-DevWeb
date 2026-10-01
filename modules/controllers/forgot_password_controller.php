@@ -3,11 +3,13 @@
 namespace modules\controllers;
 use _assets\includes\DatabaseConnection;
 use modules\models\forgot_password_model;
+use modules\views\forgot_password_view;
 
 class forgot_password_controller {
     function execute(): void {
     $model = new forgot_password_model(DatabaseConnection::getInstance());
     $messageError = null;
+    $token = null;
 
 
     // On traite les données mis en post
@@ -45,7 +47,7 @@ class forgot_password_controller {
                             $messageError = "Lien invalide ou expiré.";
                         }
                     } else {
-                        $messageError = "Veuillez remplir tous les champs nécessaire.";
+                        $messageError = "Veuillez remplir tous les champs nécessaires.";
                     }
                 }
 
@@ -78,12 +80,11 @@ class forgot_password_controller {
         //dans le cas ou le token est dans le post
     } else if (isset($_POST['token'])) {
         $token = $_POST['token'];
-    } else {
-        $token = null;}
+    }
 
 
         //Appel de vue
-    (new \modules\views\forgot_password_view())->show($token, $messageError);
+    (new forgot_password_view())->show($token, $messageError);
     }
 }
 

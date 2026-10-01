@@ -3,7 +3,7 @@
 namespace modules\views;
 
 class forgot_password_view {
-    public function show(): void {
+    public function show($token = null, $messageError = null): void {
         ob_start();
 ?>
 

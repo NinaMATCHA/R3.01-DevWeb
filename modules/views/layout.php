@@ -17,6 +17,7 @@ class Layout
 <head>
     <meta charset="utf-8">
     <title><?= htmlspecialchars($this->title); ?></title>
+    <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="_assets/style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
