@@ -11,6 +11,7 @@ class Layout
 
     public function show(): void
     {
+        //session_start();
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -36,7 +37,9 @@ class Layout
             <a href="index.php?action=signup">Inscription</a>
             <a href="index.php?action=login">Connexion</a>
             <a href="index.php?action=profil">Profil</a>
+            <?php if (isset($_SESSION['email'])) { ?>
             <a href="signout.php">Déconnexion</a>
+            <?php }?>
         </div>
     </div>
 </nav>
@@ -60,3 +63,5 @@ class Layout
 <?php
     }
 }
+
+?>
