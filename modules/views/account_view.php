@@ -2,13 +2,13 @@
 
 namespace modules\views;
 
-class profil_view {
+class account_view {
     public function show(): void {
         ob_start();
 ?>
 
 <header>
-    <h1>Profil</h1>
+    <h1>Compte</h1>
 </header>
 
 <div class="card">
@@ -16,7 +16,7 @@ class profil_view {
     Vous ne possédez pas de compte, créez en un :
     </p>
                 
-    <a href="index.php?action=signup">
+    <a href="index.php?action=signup" class="btn">
         Inscrivez-vous
     </a>
 </div>
@@ -27,7 +27,7 @@ class profil_view {
     Vous avez déjà un compte, connectez vous :
     </p>
 
-    <a href="index.php?action=login">
+    <a href="index.php?action=login" class="btn">
         Connectez-vous 
     </a>
 </div>

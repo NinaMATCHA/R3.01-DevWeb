@@ -132,7 +132,7 @@ h1, h2 {
     border-left-color: #8c6d37;
 }
 
-.btn, a {
+.btn {
     background: none;
     border: 1px solid var(--gold);
     color: var(--gold);
@@ -140,7 +140,7 @@ h1, h2 {
     margin-top: 10px;
 }
 
-.btn:hover, a:hover { 
+.btn:hover { 
     background: var(--gold);
     color: var(--bg); 
 }

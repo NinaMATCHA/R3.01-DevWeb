@@ -14,7 +14,7 @@ try {
         }
 
         else if ($_GET['action'] === 'profil') {
-            (new \modules\controllers\Profil_controller())->execute();
+            (new \modules\controllers\account_controller())->execute();
         }
 
         else if ($_GET['action'] === 'salou') {
@@ -34,13 +34,13 @@ try {
         }
 
         else {
-            throw new ControllerException('La page que vous recherchez n\'existe pas');
+            throw new Exception('La page que vous recherchez n\'existe pas');
         }
     }
     else {
-        (new \modules\controllers\Homepage\Homepage_controller())->execute();
+        (new \modules\controllers\Homepage_controller())->execute();
     }
-} catch (ControllerException $e) {
+} catch (Exception $e) {
     (new \modules\views\error($e->getMessage()))->show();
 }
 ?>
