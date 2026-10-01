@@ -9,7 +9,7 @@ class signup_model {
     public function getInscription(String $_login, $_password) : void
     {
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-        $statement = $this->connection->getConnection()->prepare("INSERT INTO users (login, password) VALUES (:login, :passwordHash);");
+        $statement = $this->connection->getConnection()->prepare("INSERT INTO users (login, password, reset_code, expiration_date) VALUES (:login, :passwordHash, NULL, NULL);");
             if (!$statement->execute([':login' => $_login, ':passwordHash' => $_password])) {
                 throw new Exception('Le mot de passe ou le login est incorrects');
         }
