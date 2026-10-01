@@ -18,13 +18,13 @@
 </div>
 
 <div class="form-area">
-    <form action="" method="post">
+    <form method="post">
         <label for="email">Votre adresse email :</label>
-        <input type="email" name="email" placeholder="exemple@domaine.fr" class="input" required />
+        <input type="email" id="email" name="email" placeholder="exemple@domaine.fr" class="input" required />
         <label for="password">Votre Mot de Passe :</label>
-        <input type="password" name="password" placeholder="Mot de passe" class="input" required />
+        <input type="password" id="password" name="password" placeholder="Mot de passe" class="input" required />
         <label for="verif">Vérification de votre Mot de Passe :</label>
-        <input type="password" name="verif" placeholder="Verification" class="input" required />
+        <input type="password" id="verif" name="verif" placeholder="Verification" class="input" required />
 
         <div>
             <button type="submit" name="action" value="inscription" class="btn">envoyer</button>

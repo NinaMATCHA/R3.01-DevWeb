@@ -17,7 +17,7 @@ class profil_view {
     </p>
                 
     <a href="index.php?action=signup">
-        <button type="button" class="btn">Inscrivez-vous</button>
+        Inscrivez-vous
     </a>
 </div>
 
@@ -28,7 +28,7 @@ class profil_view {
     </p>
 
     <a href="index.php?action=login">
-        <button type="button" class="btn">Connectez-vous</button>
+        Connectez-vous 
     </a>
 </div>
 

@@ -8,7 +8,7 @@ class login_view {
 ?>
 
 <header>
-    <h1>Connection</h1>
+    <h1>Connexion</h1>
 </header>
 
 <div class="card">
