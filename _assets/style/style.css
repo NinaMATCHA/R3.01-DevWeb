@@ -140,7 +140,7 @@ h1, h2 {
     margin-top: 10px;
 }
 
-.btn:hover, a:hover { 
+.btn:hover { 
     background: var(--gold);
     color: var(--bg); 
 }
