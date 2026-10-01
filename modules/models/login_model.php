@@ -13,17 +13,17 @@ class login_model {
     public function getConnection(String $_login, $_password): array
     {
         $passwordHash = password_hash($_password, PASSWORD_DEFAULT);
-        $statement = $this->connection->getConnection()->prepare('SELECT login, password FROM users WHERE login = :login AND password = :password;');
+        $statement = $this->connection->getConnection()->prepare('SELECT id, login, password FROM users WHERE login = :login LIMIT 1;');
 
-        if (!$statement->execute([':login' => $_login, ':password' => $passwordHash])) {
-            throw new Exception('Le login ou le mot de passe est incorrect');
+        if (!$statement->execute([':login' => $_login])) {
+            throw new Exception('Le login est incorrect');
         }
 
-        $connection = [];
-        # ici ce qu'on veut faire avec ce que retourne notre query
-        while ($row = $statement->fetch(PDO::FETCH_OBJ)) { #fetch envoie false quand y'a plus r a envoyer
-            $connection[] = $row;
+        $connection = $statement->fetch(PDO::FETCH_OBJ);
+        if (!$connection || !password_verify($_password, $connection->password)) {
+            throw new Exception('Le mot de passe est incorrect');
         }
+
         return $connection;
     }
 }
