@@ -4,6 +4,7 @@ namespace modules\views; /* Toujours en premier */
 
 class homepage_view {
     public function show(): void {
+        session_start();
         ob_start();
 ?>
 

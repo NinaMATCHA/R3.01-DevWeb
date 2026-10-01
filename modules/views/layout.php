@@ -11,12 +11,13 @@ class Layout
 
     public function show(): void
     {
+        //session_start();
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
     <title><?= htmlspecialchars($this->title); ?></title>
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="_assets/style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,10 +35,12 @@ class Layout
     <div class="dropdown">
         <button type="button">Menu ▾</button>
         <div class="menu">
+            <?php if (!isset($_SESSION['email'])) { ?>
             <a href="index.php?action=signup">Inscription</a>
             <a href="index.php?action=login">Connexion</a>
-            <a href="index.php?action=profil">Profil</a>
+            <?php } if (isset($_SESSION['email'])) { ?>
             <a href="signout.php">Déconnexion</a>
+            <?php }?>
         </div>
     </div>
 </nav>
@@ -61,3 +64,5 @@ class Layout
 <?php
     }
 }
+
+?>

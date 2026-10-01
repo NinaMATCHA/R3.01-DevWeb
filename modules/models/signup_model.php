@@ -11,7 +11,7 @@ class signup_model {
 
         $statement = $this->connection->getConnection()->prepare("INSERT INTO users (login, password) VALUES (:login, :password);");
             if (!$statement->execute([':login' => $_login, ':password' => $_password])) {
-            throw new DatabaseException();
+                throw new Exception('Le mot de passe ou le login est incorrects');
         }
     }
 }

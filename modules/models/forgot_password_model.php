@@ -17,7 +17,7 @@ class forgot_password_model {
         $statement = $this->connection->getConnection()->prepare($sql);
 
         if (!$statement->execute([':token' => $token, ':email' => $email])) {
-            throw new DatabaseException();
+            throw new Exception('L\'éxecution n\'est pas passé');
         }
 
         return $statement->rowCount() > 0;
@@ -75,7 +75,7 @@ class forgot_password_model {
             $updateStmt = $this->connection->getConnection()->prepare($updateSql);
 
             if (!$updateStmt->execute([':password' => $passwordHash, ':id' => $user->id])) {
-                throw new DatabaseException();
+                throw new Exception('Le mot de passe n\'a pas été correctement Hashé');
             }
 
             return true;
