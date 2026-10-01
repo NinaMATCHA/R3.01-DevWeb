@@ -1,6 +1,7 @@
 <?php
 
 namespace modules\models;
+use Exception;
 use PDO;
 
 use _assets\includes\DatabaseConnection;
@@ -24,7 +25,7 @@ class login_model {
             throw new Exception('Le mot de passe est incorrect');
         }
 
-        return $connection;
+        return [$connection];
     }
 }
 

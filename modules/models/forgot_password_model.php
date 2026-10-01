@@ -1,5 +1,6 @@
 <?php
-namespace modules\models; 
+namespace modules\models;
+use Exception;
 use PDO;
 use _assets\includes\DatabaseConnection;
 
