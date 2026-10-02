@@ -10,18 +10,22 @@ class DatabaseConnection
 
     private function __construct()
     {
-        $envPath = __DIR__ . "/../../.env";
+        $envPath = __DIR__ . "/../../.env"; // Recupp le chemin absolus du fichier .env
         if (file_exists($envPath)) {
             $lines = file($envPath);
             foreach ($lines as $line) {
-                if (strpos(trim($line), '#') === 0) {
-                    continue;
-                }
-                list($name, $value) = explode('=', $line, 2);
-                $name = trim($name);
+                list($name, $value) = explode('=', $line, 2); // On separe chaque = par 2 espace
+                $name = trim($name); // trim() supprime juste les caracteres speciaux
                 $value = trim($value);
 
+                // Verification si la variable n'existe pas deja pour eviter de tout casser
                 if (!array_key_exists($name, $_SERVER) && !array_key_exists($name, $_ENV)) {
+                    /*
+                    putenv permet de modifier ou creer une variable global au niveau PHP
+                    sprintf fabrique une string (%s pour string)
+                    On fait ca car en gros, putenv ne peut recup qu'une seul string on met donc
+                    tout dans une seul string d'ou le %s=%)
+                    */
                     putenv(sprintf('%s=%s', $name, $value));
                     $_ENV[$name] = $value;
                     $_SERVER[$name] = $value;
@@ -29,7 +33,7 @@ class DatabaseConnection
             }
         }
         try { # ça c comme dans le cours, hesitez pas a vous co avec les id pour voir la bdd
-            $host = getenv('DB_HOST');
+            $host = getenv('DB_HOST'); // On recup via le .env avec getenv
             $dbname = getenv('DB_NAME');
             $user = getenv('DB_USER');
             $password = getenv('DB_PASS');
