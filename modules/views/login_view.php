@@ -3,7 +3,7 @@
 namespace modules\views; /* Toujours en premier */
 
 class login_view {
-    public function show(): void {
+    public function show(?string $error = null): void {
         ob_start();
 ?>
 
@@ -31,6 +31,12 @@ class login_view {
             <button type="reset" class="btn">Réinitialiser</button>
         </div>
     </form>
+
+<?php
+    if ($error) {
+        echo htmlspecialchars($error);
+    }
+?>
             
     <a href="index.php?action=mdpOublie">Mot de passe oublié ?</a>
 </div>
