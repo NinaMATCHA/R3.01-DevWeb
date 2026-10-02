@@ -4,7 +4,7 @@ namespace modules\models;
 
 use _assets\includes\DatabaseConnection;
 use Exception;
-class signup_model {
+class  signup_model {
     public function __construct(private DatabaseConnection $connection) {}
 
     public function getInscription(String $_login, $_password) : void

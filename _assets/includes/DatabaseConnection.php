@@ -1,6 +1,7 @@
 <?php
 namespace _assets\includes;
 use PDO; // C'est une class global pour la connexion a la bdd
+use PDOException;
 
 class DatabaseConnection
 {
@@ -9,9 +10,31 @@ class DatabaseConnection
 
     private function __construct()
     {
+        $envPath = __DIR__ . "/../../.env";
+        if (file_exists($envPath)) {
+            $lines = file($envPath);
+            foreach ($lines as $line) {
+                if (strpos(trim($line), '#') === 0) {
+                    continue;
+                }
+                list($name, $value) = explode('=', $line, 2);
+                $name = trim($name);
+                $value = trim($value);
+
+                if (!array_key_exists($name, $_SERVER) && !array_key_exists($name, $_ENV)) {
+                    putenv(sprintf('%s=%s', $name, $value));
+                    $_ENV[$name] = $value;
+                    $_SERVER[$name] = $value;
+                }
+            }
+        }
         try { # ça c comme dans le cours, hesitez pas a vous co avec les id pour voir la bdd
-            $dsn = 'mysql:host=mysql-ninamc.alwaysdata.net;dbname=ninamc_bdd';
-            $this->connection = new PDO($dsn, 'ninamc', 'NevotLe+Fortdu13');
+            $host = getenv('DB_HOST');
+            $dbname = getenv('DB_NAME');
+            $user = getenv('DB_USER');
+            $password = getenv('DB_PASS');
+            $dsn = "mysql:host={$host};dbname={$dbname}";
+            $this->connection = new PDO($dsn, $user, $password);
             $this->connection->exec('SET CHARACTER SET utf8');
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
