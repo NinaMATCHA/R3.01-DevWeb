@@ -11,6 +11,8 @@ class login_controller {
 
         session_start();
 
+        $error = null; // On met l'erreur a null de base car on la met dans le show a la fin
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $_action = filter_input(INPUT_POST, 'action');
@@ -26,22 +28,19 @@ class login_controller {
 
                     if (!empty($connection)) {
                         $_SESSION['email'] = $_login;
-                        header('Location: index.php');
-                        exit();
+                        header('Location: index.php?action=login');
                     }
                     else {
-                        header('Location: index.php?action=login');
-                        exit();
+                        $error = 'Email ou mot de passe incorrect';
                     }
                 }
                 else {
-                    header('Location: index.php?action=login');
-                    exit();
+                    $error = 'Veuillez remplir tous les champs';
                 }
             }
         }
         
-        (new \modules\views\login_view())->show();
+        (new \modules\views\login_view())->show($error);
     }
 }
 
