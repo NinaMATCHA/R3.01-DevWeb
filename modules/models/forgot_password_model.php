@@ -14,11 +14,11 @@ class forgot_password_model {
     //Fonction pour sauvegarder le token (une suite de caractere qui se met dans l'URL) a usage unique.
     private function saveTokenInDataBase(string $email, string $token): bool 
     {
-       $sql = "UPDATE users SET reset_code = :token WHERE email = :email";
+       $sql = "UPDATE users SET reset_code = :token, expiration_date = DATE_ADD(NOW(), INTERVAL 15 MINUTE) WHERE login = :email";
         $statement = $this->connection->getConnection()->prepare($sql);
 
         if (!$statement->execute([':token' => $token, ':email' => $email])) {
-            throw new Exception('L\'éxecution n\'est pas passé');
+            throw new \Exception("Erreur de base de données.");
         }
 
         return $statement->rowCount() > 0;
@@ -32,7 +32,7 @@ class forgot_password_model {
     $token = bin2hex(random_bytes(32));
 
     if(!$this->saveTokenInDataBase($to, $token)){
-        return false;
+        return true;
     }
 
 
@@ -59,11 +59,14 @@ class forgot_password_model {
 //Verif la validité du token et change le mdp
     public function verifyTokenAndChangePassword(string $token, string $newPassword):bool{
     // recherche de l'utilisateur associé au token dans la BDD
-        $sql = "SELECT id FROM users WHERE reset_code = :token AND reset_code IS NOT NULL";
+       $sql = "SELECT login FROM users 
+                WHERE reset_code = :token 
+                  AND reset_code IS NOT NULL 
+                  AND expiration_date > NOW()";
         $statement = $this->connection->getConnection()->prepare($sql);
         
         if (!$statement->execute([':token' => $token])) {
-            throw new DatabaseException();
+            throw new \Exception("Erreur de base de données.");
         }
 
 
@@ -72,11 +75,15 @@ class forgot_password_model {
             $passwordHash = password_hash($newPassword, PASSWORD_DEFAULT);
 
             //mtn on fait la maj de la bdd et on détruit le token
-            $updateSql = "UPDATE users SET password = :password, reset_code = NULL WHERE id = :id";
+           $updateSql = "UPDATE users 
+                          SET password = :password, 
+                              reset_code = NULL, 
+                              expiration_date = NULL 
+                          WHERE login = :login";
             $updateStmt = $this->connection->getConnection()->prepare($updateSql);
 
-            if (!$updateStmt->execute([':password' => $passwordHash, ':id' => $user->id])) {
-                throw new Exception('Le mot de passe n\'a pas été correctement Hashé');
+            if (!$updateStmt->execute([':password' => $passwordHash, ':login' => $user->login])) {
+                throw new \Exception("Erreur de base de données.");
             }
 
             return true;

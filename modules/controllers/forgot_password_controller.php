@@ -64,7 +64,7 @@ class forgot_password_controller {
 
                     if (!empty($email)) {
                         $model->sendMail($email);
-                        header('Location: index.php?action=forgotPassword&mail=sent');
+                        header('Location: index.php?action=mdpOublie&mail=sent');
                         exit();
                     } else {
                         $messageError = "Veuillez saisir votre adresse email.";
