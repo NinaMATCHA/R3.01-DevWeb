@@ -1,8 +1,22 @@
 <?php
 
-namespace modules\views; /* Toujours en premier */
+namespace modules\views; 
 
+/**
+ * Vue de la page de connexion.
+ * 
+ * Génère le formulaire HTML de connexion et gère l'affichage
+ * des messages d'erreur.
+ */
 class login_view {
+
+    /**
+     * Affiche le formulaire de connexion.
+     * 
+     * @param string|null $error Message d'erreur éventuel à afficher à l'utilisateur.
+     * 
+     * @return void
+     */
     public function show(?string $error = null): void {
         ob_start();
 ?>
