@@ -1,5 +1,5 @@
 # R3.01-DevWeb
-Projet R3.01
+Projet de développement web en PHP, utilisant un MVC dans le cadre de la ressource R3.01
 
 ## Liste des développeurs
 - Ewan François [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/EwanFRANCOIS)
