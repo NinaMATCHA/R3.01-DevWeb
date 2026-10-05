@@ -2,7 +2,20 @@
 
 namespace modules\views;
 
+
+/**
+ * Vue responsable de l'affichage de l'interface de récupération de mot de passe.
+ */
 class forgot_password_view {
+
+    /**
+     * Affiche le formulaire ou le message de confirmation selon le contexte.
+     *
+     * @param string|null $token Token de réinitialisation transmis dans l'URL si présent
+     * @param string|null $messageError Message d'erreur à afficher à l'utilisateur
+     * @return void
+     */
+
     public function show($token = null, $messageError = null): void {
         $mailSent = isset($_GET['mail']) && $_GET['mail'] === 'sent';
         ob_start();
