@@ -1,6 +1,61 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\Autoloader",
+            "name": "Autoloader",
+            "summary": "",
+            "url": "classes/Autoloader.html"
+        },                {
+            "fqsen": "\\Autoloader\u003A\u003Aregister\u0028\u0029",
+            "name": "register",
+            "summary": "",
+            "url": "classes/Autoloader.html#method_register"
+        },                {
+            "fqsen": "\\_assets\\includes\\DatabaseConnection",
+            "name": "DatabaseConnection",
+            "summary": "",
+            "url": "classes/assets-includes-DatabaseConnection.html"
+        },                {
+            "fqsen": "\\_assets\\includes\\DatabaseConnection\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/assets-includes-DatabaseConnection.html#method___construct"
+        },                {
+            "fqsen": "\\_assets\\includes\\DatabaseConnection\u003A\u003AgetInstance\u0028\u0029",
+            "name": "getInstance",
+            "summary": "",
+            "url": "classes/assets-includes-DatabaseConnection.html#method_getInstance"
+        },                {
+            "fqsen": "\\_assets\\includes\\DatabaseConnection\u003A\u003AgetConnection\u0028\u0029",
+            "name": "getConnection",
+            "summary": "",
+            "url": "classes/assets-includes-DatabaseConnection.html#method_getConnection"
+        },                {
+            "fqsen": "\\_assets\\includes\\DatabaseConnection\u003A\u003A\u0024connection",
+            "name": "connection",
+            "summary": "",
+            "url": "classes/assets-includes-DatabaseConnection.html#property_connection"
+        },                {
+            "fqsen": "\\_assets\\includes\\DatabaseConnection\u003A\u003A\u0024instance",
+            "name": "instance",
+            "summary": "",
+            "url": "classes/assets-includes-DatabaseConnection.html#property_instance"
+        },                {
+            "fqsen": "\\start_page\u0028\u0029",
+            "name": "start_page",
+            "summary": "",
+            "url": "namespaces/default.html#function_start_page"
+        },                {
+            "fqsen": "\\end_page\u0028\u0029",
+            "name": "end_page",
+            "summary": "",
+            "url": "namespaces/default.html#function_end_page"
+        },                {
+            "fqsen": "\\Exception_database_controller",
+            "name": "Exception_database_controller",
+            "summary": "",
+            "url": "classes/Exception-database-controller.html"
+        },                {
             "fqsen": "\\modules\\controllers\\account_controller",
             "name": "account_controller",
             "summary": "",
@@ -43,12 +98,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\modules\\controllers\\login_controller",
             "name": "login_controller",
-            "summary": "",
+            "summary": "Contr\u00F4leur\u0020de\u0020la\u0020page\u0020de\u0020connexion.",
             "url": "classes/modules-controllers-login-controller.html"
         },                {
             "fqsen": "\\modules\\controllers\\login_controller\u003A\u003Aexecute\u0028\u0029",
             "name": "execute",
-            "summary": "",
+            "summary": "Ex\u00E9cute\u0020la\u0020logique\u0020de\u0020connexion.",
             "url": "classes/modules-controllers-login-controller.html#method_execute"
         },                {
             "fqsen": "\\modules\\controllers\\Nevot_controller",
@@ -73,12 +128,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\modules\\controllers\\signup_controller",
             "name": "signup_controller",
-            "summary": "",
+            "summary": "Contr\u00F4leur\u0020g\u00E9rant\u0020l\u0027inscription\u0020des\u0020utilisateurs.",
             "url": "classes/modules-controllers-signup-controller.html"
         },                {
             "fqsen": "\\modules\\controllers\\signup_controller\u003A\u003Aexecute\u0028\u0029",
             "name": "execute",
-            "summary": "",
+            "summary": "Ex\u00E9cute\u0020le\u0020traitement\u0020du\u0020formulaire\u0020et\u0020affiche\u0020la\u0020vue\u0020associ\u00E9e.",
             "url": "classes/modules-controllers-signup-controller.html#method_execute"
         },                {
             "fqsen": "\\modules\\models\\forgot_password_model",
@@ -113,17 +168,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\modules\\models\\login_model",
             "name": "login_model",
-            "summary": "",
+            "summary": "Mod\u00E8le\u0020de\u0020gestion\u0020de\u0020la\u0020connexion\u0020utilisateur.",
             "url": "classes/modules-models-login-model.html"
         },                {
             "fqsen": "\\modules\\models\\login_model\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Initialise\u0020l\u0027instance\u0020du\u0020mod\u00E8le\u0020avec\u0020la\u0020connexion\u0020\u00E0\u0020la\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/modules-models-login-model.html#method___construct"
         },                {
             "fqsen": "\\modules\\models\\login_model\u003A\u003AgetConnection\u0028\u0029",
             "name": "getConnection",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E8re\u0020un\u0020utilisateur\u0020en\u0020base\u0020de\u0020donn\u00E9es\u0020et\u0020v\u00E9rifie\u0020son\u0020mot\u0020de\u0020passe.",
             "url": "classes/modules-models-login-model.html#method_getConnection"
         },                {
             "fqsen": "\\modules\\models\\login_model\u003A\u003A\u0024connection",
@@ -133,17 +188,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\modules\\models\\signup_model",
             "name": "signup_model",
-            "summary": "",
+            "summary": "Mod\u00E8le\u0020g\u00E9rant\u0020la\u0020persistance\u0020des\u0020donn\u00E9es\u0020d\u0027inscription\u0020en\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/modules-models-signup-model.html"
         },                {
             "fqsen": "\\modules\\models\\signup_model\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Initialise\u0020le\u0020mod\u00E8le\u0020avec\u0020la\u0020connexion\u0020\u00E0\u0020la\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/modules-models-signup-model.html#method___construct"
         },                {
             "fqsen": "\\modules\\models\\signup_model\u003A\u003AgetInscription\u0028\u0029",
             "name": "getInscription",
-            "summary": "",
+            "summary": "Cr\u00E9e\u0020un\u0020nouvel\u0020utilisateur\u0020en\u0020BDD\u0020apr\u00E8s\u0020hachage\u0020de\u0020son\u0020mot\u0020de\u0020passe.",
             "url": "classes/modules-models-signup-model.html#method_getInscription"
         },                {
             "fqsen": "\\modules\\models\\signup_model\u003A\u003A\u0024connection",
@@ -248,12 +303,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\modules\\views\\login_view",
             "name": "login_view",
-            "summary": "",
+            "summary": "Vue\u0020de\u0020la\u0020page\u0020de\u0020connexion.",
             "url": "classes/modules-views-login-view.html"
         },                {
             "fqsen": "\\modules\\views\\login_view\u003A\u003Ashow\u0028\u0029",
             "name": "show",
-            "summary": "",
+            "summary": "Affiche\u0020le\u0020formulaire\u0020de\u0020connexion.",
             "url": "classes/modules-views-login-view.html#method_show"
         },                {
             "fqsen": "\\modules\\views\\nevot_view",
@@ -278,18 +333,28 @@ Search.appendIndex(
         },                {
             "fqsen": "\\modules\\views\\signup_view",
             "name": "signup_view",
-            "summary": "",
+            "summary": "Vue\u0020responsable\u0020de\u0020l\u0027affichage\u0020de\u0020la\u0020page\u0020d\u0027inscription.",
             "url": "classes/modules-views-signup-view.html"
         },                {
             "fqsen": "\\modules\\views\\signup_view\u003A\u003Ashow\u0028\u0029",
             "name": "show",
-            "summary": "",
+            "summary": "G\u00E9n\u00E8re\u0020et\u0020affiche\u0020le\u0020code\u0020HTML\u0020du\u0020formulaire\u0020d\u0027inscription.",
             "url": "classes/modules-views-signup-view.html#method_show"
         },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
             "url": "namespaces/default.html"
+        },                {
+            "fqsen": "\\_assets\\includes",
+            "name": "includes",
+            "summary": "",
+            "url": "namespaces/assets-includes.html"
+        },                {
+            "fqsen": "\\_assets",
+            "name": "_assets",
+            "summary": "",
+            "url": "namespaces/assets.html"
         },                {
             "fqsen": "\\modules\\controllers",
             "name": "controllers",

@@ -60,6 +60,16 @@
                     <section class="phpdocumentor-sidebar__category -namespaces">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="namespaces/assets.html" class="">_assets</a>
+</h4>
+    <ul class="phpdocumentor-list">
+                    <li>
+                <a href="namespaces/assets-includes.html" class="">includes</a>
+                
+            </li>
+            </ul>
+
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="namespaces/modules.html" class="">modules</a>
 </h4>
     <ul class="phpdocumentor-list">
@@ -129,11 +139,12 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="modules/models/signup_model.php"><a href="files/modules-models-signup-model.html"><abbr title="modules/models/signup_model.php">signup_model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
-        
+            <p class="phpdocumentor-summary">Modèle gérant la persistance des données d&#039;inscription en base de données.</p>
+
 
 
 
@@ -163,7 +174,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/modules-models-signup-model.html#property_connection">$connection</a>
     <span>
-                        &nbsp;: <abbr title="\_assets\includes\DatabaseConnection">DatabaseConnection</abbr>            </span>
+                        &nbsp;: <a href="classes/assets-includes-DatabaseConnection.html"><abbr title="\_assets\includes\DatabaseConnection">DatabaseConnection</abbr></a>            </span>
 </dt>
 
     </dl>
@@ -179,12 +190,14 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
+<dd>Initialise le modèle avec la connexion à la base de données.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/modules-models-signup-model.html#method_getInscription">getInscription()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
+<dd>Crée un nouvel utilisateur en BDD après hachage de son mot de passe.</dd>
 
     </dl>
 
@@ -216,7 +229,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="modules/models/signup_model.php"><a href="files/modules-models-signup-model.html"><abbr title="modules/models/signup_model.php">signup_model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -224,7 +237,7 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type"><abbr title="\_assets\includes\DatabaseConnection">DatabaseConnection</abbr></span>
+            <span class="phpdocumentor-signature__type"><a href="classes/assets-includes-DatabaseConnection.html"><abbr title="\_assets\includes\DatabaseConnection">DatabaseConnection</abbr></a></span>
     <span class="phpdocumentor-signature__name">$connection</span>
     </code>
 
@@ -258,14 +271,15 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="modules/models/signup_model.php"><a href="files/modules-models-signup-model.html"><abbr title="modules/models/signup_model.php">signup_model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Initialise le modèle avec la connexion à la base de données.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><abbr title="\_assets\includes\DatabaseConnection">DatabaseConnection</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$connection</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><a href="classes/assets-includes-DatabaseConnection.html"><abbr title="\_assets\includes\DatabaseConnection">DatabaseConnection</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$connection</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -275,10 +289,12 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$connection</span>
-                : <span class="phpdocumentor-argument-list__argument__type"><abbr title="\_assets\includes\DatabaseConnection">DatabaseConnection</abbr></span>
+                : <span class="phpdocumentor-argument-list__argument__type"><a href="classes/assets-includes-DatabaseConnection.html"><abbr title="\_assets\includes\DatabaseConnection">DatabaseConnection</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Instance de connexion PDO encapsulée.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -302,14 +318,15 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="modules/models/signup_model.php"><a href="files/modules-models-signup-model.html"><abbr title="modules/models/signup_model.php">signup_model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Crée un nouvel utilisateur en BDD après hachage de son mot de passe.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getInscription</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$_login</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$_password</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">getInscription</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$_login</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$_password</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -322,18 +339,38 @@
                 : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Adresse email ou identifiant de l'utilisateur.</p>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$_password</span>
-                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Mot de passe en clair à hacher.</p>
+</section>
+
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="method_getInscription_tags">
+        Tags
+        <a href="classes/modules-models-signup-model.html#method_getInscription_tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                    <dt class="phpdocumentor-tag-list__entry">
+                <span class="phpdocumentor-tag__name">throws</span>
+            </dt>
+                            <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\Exception">Exception</abbr></span>
+                                                                                        <section class="phpdocumentor-description"><p>Si la requête d'insertion échoue.</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         
     
