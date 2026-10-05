@@ -3,7 +3,7 @@
     namespace modules\views;
 
     class signup_view {
-        public function show(): void {
+        public function show(?string $error = null): void {
             ob_start();
 ?>
 
@@ -31,6 +31,11 @@
             <button type="reset" class="btn">Réinitialiser</button>
         </div>
     </form>
+    <?php
+    if ($error) {
+        echo htmlspecialchars($error);
+    }
+    ?>
 </div>
 
 <?php
