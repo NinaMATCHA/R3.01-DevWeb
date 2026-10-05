@@ -57,6 +57,7 @@ class Layout
 
         Hébergé par alwaysdata.
     </p>
+    <a href="sitemap.xml">Plan du site.</a>
 </footer>
 
 </body>
