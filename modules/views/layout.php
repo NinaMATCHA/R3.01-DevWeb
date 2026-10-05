@@ -24,6 +24,7 @@ class Layout
     <meta property="og:description" content="<?=$_description?>"/>
     <meta property="og:image" content="<?=$_Image?>"/>
     <meta name="description" content="<?= $_description ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($this->title); ?></title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="_assets/style/style.css">
