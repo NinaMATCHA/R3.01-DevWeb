@@ -1,0 +1,11 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "^12.5"
+    },
+    "autoload": {
+        "classmap": [
+            "_assets/",
+            "modules/"
+        ]
+    }
+}

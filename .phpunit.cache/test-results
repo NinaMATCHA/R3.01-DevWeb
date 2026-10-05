@@ -1,0 +1,1 @@
+{"version":2,"defects":{"LoginTest::test_bon_mdp":8,"LoginTest::test_mauvais_mdp":8},"times":{"LoginTest::test_bon_mdp":0.182,"LoginTest::test_mauvais_mdp":0.174}}
