@@ -7,19 +7,26 @@ use modules\models\signup_model;
 
 class signup_controller {
     public function execute(): void {
+
+        session_start();
+
+        $error = null;
+
         if (isset($_POST['action']) && !empty($_POST['action'])) {
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_login = $_POST['email'];
                 $_password = $_POST['password'];
+                $_verif_password = $_POST['verif'];
                 $_action = $_POST['action'];
 
-                if (empty($_login) || empty($_password)) {
-                    $_SERVER['erreur'] = 'Veuillez remplir le formulaire';
-                    header('location: index.php?action=signup');
-                    exit();
+                if (empty($_login) || empty($_password) || empty($_verif_password)) {
+                    $error = 'Veuillez remplir le formulaire';
+                }
+                elseif ($_verif_password !== $_password) {
+                    $error = 'Les mots de passe ne correspondent pas';
                 }
 
-                if ($_action === 'inscription') {
+                elseif ($_action === 'inscription') {
 
                     $inscriptionModel = new signup_model(DatabaseConnection::getInstance());
                     $inscription = $inscriptionModel->getInscription($_login, $_password);
@@ -27,10 +34,13 @@ class signup_controller {
                     header('Location: index.php?success=true');
                     exit();
                 }
+                else {
+                    $errror = 'Veuillez remplir le formulaire';
+                }
             }
         }
 
-        (new \modules\views\signup_view())->show();
+        (new \modules\views\signup_view())->show($error);
     }
 }
 ?>

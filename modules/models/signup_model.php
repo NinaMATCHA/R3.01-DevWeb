@@ -13,7 +13,7 @@ class  signup_model {
         $statement = $this->connection->getConnection()->prepare("INSERT INTO users (login, password, reset_code, expiration_date) VALUES (:login, :password, NULL, NULL);");
             if (!$statement->execute([':login' => $_login, ':password' => $passwordHash])) {
                 throw new Exception('Le mot de passe ou le login est incorrects');
-        }
+            }
     }
 }
 
