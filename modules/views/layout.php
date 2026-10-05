@@ -11,11 +11,18 @@ class Layout
 
     public function show(): void
     {
+
+        $_Image = '/../../_assets/Images/FubukiRef.jpg';
+        $_description = 'Liens vers notre super site \'MATHEOPOLIS\'. Suivez une aventure folle et accomplissez les énigmes tout au long de votre parcours.';
+        $_titreRef = 'Matheopolis';
         //session_start();
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
+    <meta property="og:title" content="<?=$_titreRef?>"\>
+    <meta property="og:description" content="<?=$_description?>"/>
+    <meta property="og:image" content="<?=$_Image?>"/>
     <title><?= htmlspecialchars($this->title); ?></title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="_assets/style/style.css">
