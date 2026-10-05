@@ -15,10 +15,10 @@ public function test_bon_mdp(): void
     $hash = password_hash('12345', PASSWORD_DEFAULT);
     $pdo->exec("INSERT INTO users (login, password) VALUES ('utilisateur', '$hash')");
 
-    $dbConnMock = $this->createStub(DatabaseConnection::class);
-    $dbConnMock->method('getConnection')->willReturn($pdo);
+    $dbConnStub = $this->createStub(DatabaseConnection::class);
+    $dbConnStub->method('getConnection')->willReturn($pdo);
 
-    $model = new login_model($dbConnMock);
+    $model = new login_model($dbConnStub);
     $result = $model->getConnection('utilisateur', '12345');
 
     $this->assertSame('utilisateur', $result[0]->login);
@@ -32,10 +32,10 @@ public function test_mauvais_mdp(): void
     $hash = password_hash('bon_mdp', PASSWORD_DEFAULT);
     $pdo->exec("INSERT INTO users (login, password) VALUES ('utilisateur', '$hash')");
 
-    $dbConnMock = $this->createStub(DatabaseConnection::class);
-    $dbConnMock->method('getConnection')->willReturn($pdo);
+    $dbConnStub = $this->createStub(DatabaseConnection::class);
+    $dbConnStub->method('getConnection')->willReturn($pdo);
 
-    $model = new login_model($dbConnMock);
+    $model = new login_model($dbConnStub);
     $result = $model->getConnection('utilisateur', 'mauvais_mdp');
 
     $this->assertNull($result);
