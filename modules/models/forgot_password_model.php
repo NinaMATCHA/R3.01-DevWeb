@@ -1,6 +1,7 @@
 <?php
 namespace modules\models;
 use Exception;
+use includes\Exception_database_controller;
 use PDO;
 use _assets\includes\DatabaseConnection;
 
@@ -32,7 +33,7 @@ class forgot_password_model {
         $statement = $this->connection->getConnection()->prepare($sql);
 
         if (!$statement->execute([':token' => $token, ':email' => $email])) {
-            throw new \Exception("Erreur de base de données.");
+            throw new Exception_database_controller("Erreur de base de données.");
         }
 
         return $statement->rowCount() > 0;
@@ -93,7 +94,7 @@ class forgot_password_model {
         $statement = $this->connection->getConnection()->prepare($sql);
         
         if (!$statement->execute([':token' => $token])) {
-            throw new \Exception("Erreur de base de données.");
+            throw new Exception_database_controller("Erreur de base de données.");
         }
 
 
@@ -110,7 +111,7 @@ class forgot_password_model {
             $updateStmt = $this->connection->getConnection()->prepare($updateSql);
 
             if (!$updateStmt->execute([':password' => $passwordHash, ':login' => $user->login])) {
-                throw new \Exception("Erreur de base de données.");
+                throw new Exception_database_controller("Erreur de base de données.");
             }
 
             return true;

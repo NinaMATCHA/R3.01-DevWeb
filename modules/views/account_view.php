@@ -16,7 +16,7 @@ class account_view {
     Vous ne possédez pas de compte, créez en un :
     </p>
                 
-    <a href="index.php?action=signup" class="btn">
+    <a href="index.php?action=signup">
         Inscrivez-vous
     </a>
 </div>
@@ -27,7 +27,7 @@ class account_view {
     Vous avez déjà un compte, connectez vous :
     </p>
 
-    <a href="index.php?action=login" class="btn">
+    <a href="index.php?action=login">
         Connectez-vous 
     </a>
 </div>

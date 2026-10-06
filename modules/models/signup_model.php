@@ -6,6 +6,7 @@ namespace modules\models;
 
 use _assets\includes\DatabaseConnection;
 use Exception;
+use includes\Exception_database_controller;
 
 
 /**
@@ -38,7 +39,7 @@ class  signup_model {
         $passwordHash = password_hash($_password, PASSWORD_DEFAULT);
         $statement = $this->connection->getConnection()->prepare("INSERT INTO users (login, password, reset_code, expiration_date) VALUES (:login, :password, NULL, NULL);");
             if (!$statement->execute([':login' => $_login, ':password' => $passwordHash])) {
-                throw new Exception('Le mot de passe ou le login est incorrects');
+                throw new Exception_database_controller('Le mot de passe ou le login est incorrects');
             }
     }
 }
