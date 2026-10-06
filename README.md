@@ -12,7 +12,7 @@ Projet de développement web en PHP, utilisant un MVC dans le cadre de la ressou
 - Ewan François [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/EwanFRANCOIS)
 - Aurèle Jambert [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Aurele879)
 - Lezina Khadissova [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/KhadissovaLezina)
-- Nina Matic-Charbit [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/NinaMATCHA)
+- Nina Matic Charbit [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/NinaMATCHA)
 - Nicolas Moyenin [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/NicolasMoyenin)
 
 ## Maquette
