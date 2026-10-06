@@ -9,7 +9,7 @@ class Salou_controller {
             (new \modules\views\salou_view())->show();
         }
         else {
-            header('location: index.php?action=profil');
+            header('location: index.php?action=account');
             exit();
         }
     }

@@ -35,7 +35,7 @@ class delete_controller {
                     $_password = filter_input(INPUT_POST, 'password');
                     if ($_password) {
                         $deleteModel = new delete_model(DatabaseConnection::getInstance());
-                        $delete = deleteModel->getDelete($_login, $_password);
+                        $delete = $deleteModel->getDelete($_login, $_password);
 
                         if($delete){
                             $_SESSION['email'] = null;
@@ -51,10 +51,10 @@ class delete_controller {
                     }
                 }
             }
-            (new \modules\views\login_view())->show($error);
+            (new \modules\views\delete_view())->show($error);
         }
         else {
-            header('location: index.php?action=profil');
+            header('location: index.php?action=account');
             exit();
         }
     }

@@ -45,7 +45,8 @@ class signup_controller {
                     try {
                         $inscriptionModel = new signup_model(DatabaseConnection::getInstance());
                         $inscription = $inscriptionModel->getInscription($_login, $_password);
-
+                        $_SESSION['email'] = $_login;
+                        $_SESSION['password'] = $_password;
                         header('Location: index.php?success=true');
                         exit();
                         # Les | permettent juste de reunnir 3 catch en 1 seul pour eviter d'en avoir 3

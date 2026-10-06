@@ -9,7 +9,7 @@ class Nevot_controller {
             (new \modules\views\nevot_view())->show();
         }
         else {
-            header('location: index.php?action=profil');
+            header('location: index.php?action=account');
             exit();
         }
     }

@@ -13,7 +13,7 @@ try {
             (new \modules\controllers\signup_controller())->execute();
         }
 
-        else if ($_GET['action'] === 'profil') {
+        else if ($_GET['action'] === 'account') {
             (new \modules\controllers\account_controller())->execute();
         }
 
