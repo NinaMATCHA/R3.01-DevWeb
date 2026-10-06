@@ -52,7 +52,7 @@ class delete_view {
 </div>
 
 <?php
-        (new \modules\views\layout('Suppression', ob_get_clean()))->show();
+        (new \modules\views\Layout('Suppression', ob_get_clean()))->show();
     }
 }
 ?>

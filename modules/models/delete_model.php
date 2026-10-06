@@ -5,6 +5,7 @@ use Exception;
 use PDO;
 
 use _assets\includes\DatabaseConnection;
+use includes\Exception_database_controller;
 
 
 /**
@@ -25,7 +26,7 @@ class delete_model {
      * @param string $_login    Identifiant ou email de l'utilisateur.
      * @param string $_password Mot de passe en clair soumis par le formulaire.
      * 
-     * @return object|null Retourne true si la suppression a réussi, false sinon.
+     * @return bool Retourne true si la suppression a réussi, false sinon.
      */
     public function getDelete(string $_login,string $_password): ?bool
     {
