@@ -80,7 +80,7 @@ class forgot_password_view {
 <?php endif; ?>
 
 <?php
-        (new \modules\views\layout('Mot de passe oublié', ob_get_clean()))->show();
+        (new \modules\views\Layout('Mot de passe oublié', ob_get_clean()))->show();
     }
 }
 ?>

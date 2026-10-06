@@ -12,7 +12,7 @@ class salou_view {
 </div>
 
 <?php
-        (new \modules\views\layout('Salou', ob_get_clean()))->show();
+        (new \modules\views\Layout('Salou', ob_get_clean()))->show();
     }
 }
 

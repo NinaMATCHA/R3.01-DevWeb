@@ -56,7 +56,7 @@ class login_view {
 </div>
 
 <?php
-        (new \modules\views\layout('Connection', ob_get_clean()))->show();
+        (new \modules\views\Layout('Connection', ob_get_clean()))->show();
     }
 }
 ?>

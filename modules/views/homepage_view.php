@@ -27,7 +27,7 @@ class homepage_view {
 </div>
 
 <?php
-        (new \modules\views\layout('Bienvenue', ob_get_clean()))->show();
+        (new \modules\views\Layout('Bienvenue', ob_get_clean()))->show();
     }
 }
 ?>

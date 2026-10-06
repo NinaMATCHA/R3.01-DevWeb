@@ -50,7 +50,7 @@
 </div>
 
 <?php
-            (new \modules\views\layout('Inscription', ob_get_clean()))->show();
+            (new \modules\views\Layout('Inscription', ob_get_clean()))->show();
         }
     }
 

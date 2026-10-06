@@ -14,7 +14,7 @@ class nevot_view {
 </div>
 
 <?php
-        (new \modules\views\layout('Nevot', ob_get_clean()))->show();
+        (new \modules\views\Layout('Nevot', ob_get_clean()))->show();
     }
 }
 ?>

@@ -12,7 +12,7 @@ class hello_view {
 </div>
 
 <?php
-        (new \modules\views\layout('Bonjour', ob_get_clean()))->show();
+        (new \modules\views\Layout('Bonjour', ob_get_clean()))->show();
     }
 }
 ?>
