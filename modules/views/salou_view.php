@@ -8,7 +8,7 @@ class salou_view {
 ?>
 
 <div class="card">
-    <h1>SALOU IS THE BEST TEACHER !</h1>
+    <h1>SALOU</h1>
 </div>
 
 <?php
