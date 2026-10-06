@@ -3,6 +3,7 @@ Projet de développement web en PHP, utilisant un MVC dans le cadre de la ressou
 
 ## Commandes
 **Tests Unitaires :** ./vendor/bin/phpunit
+
 **PHP Stan :** vendor/bin/phpstan analyse /workspaces/R3.01-DevWeb/modules --level=8
 
 ## Liste des développeurs
