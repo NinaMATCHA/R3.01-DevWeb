@@ -6,6 +6,8 @@ Projet de développement web en PHP, utilisant un MVC dans le cadre de la ressou
 
 **PHP Stan :** vendor/bin/phpstan analyse /workspaces/R3.01-DevWeb/modules --level=8
 
+**Génération du PHPDoc (à faire à chaque modification de la doc) :** docker run --rm -v "$(pwd):/data" phpdoc/phpdoc:3 -d . -t docs
+
 ## Liste des développeurs
 - Ewan François [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/EwanFRANCOIS)
 - Aurèle Jambert [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Aurele879)
