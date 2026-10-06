@@ -33,6 +33,10 @@ try {
             (new \modules\controllers\forgot_password_controller())->execute();
         }
 
+        else if ($_GET['action'] === 'delete') {
+            (new \modules\controllers\delete_controller())->execute();
+        }
+
         else {
             throw new Exception('La page que vous recherchez n\'existe pas');
         }

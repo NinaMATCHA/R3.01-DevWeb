@@ -32,14 +32,14 @@ class  signup_model {
      * @param string $_password Mot de passe en clair à hacher.
      * 
      * @throws Exception_database_controller Si la requête d'insertion échoue.
-     * @return bool
+     * @return bool Retourne true si l'inscription a réussi, false sinon.
      */
     public function getInscription(string $_login,string $_password) : bool
     {
         $passwordHash = password_hash($_password, PASSWORD_DEFAULT);
         $statement = $this->connection->getConnection()->prepare("INSERT INTO users (login, password, reset_code, expiration_date) VALUES (:login, :password, NULL, NULL);");
             if (!$statement->execute([':login' => $_login, ':password' => $passwordHash])) {
-                throw new Exception_database_controller('Le mot de passe ou le login est incorrects');
+                throw new Exception_database_controller('Le mot de passe ou le login est incorrect');
             }
 
         return true;
