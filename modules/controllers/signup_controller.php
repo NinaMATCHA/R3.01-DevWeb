@@ -3,7 +3,9 @@ namespace modules\controllers;
 
 use _assets\includes\DatabaseConnection;
 use modules\models\signup_model;
-
+use includes\Exception_database_controller;
+use PDOException;
+use Exception;
 
 /**
  * Contrôleur gérant l'inscription des utilisateurs.
@@ -40,12 +42,16 @@ class signup_controller {
                 }
 
                 elseif ($_action === 'inscription') {
+                    try {
+                        $inscriptionModel = new signup_model(DatabaseConnection::getInstance());
+                        $inscription = $inscriptionModel->getInscription($_login, $_password);
 
-                    $inscriptionModel = new signup_model(DatabaseConnection::getInstance());
-                    $inscription = $inscriptionModel->getInscription($_login, $_password);
-
-                    header('Location: index.php?success=true');
-                    exit();
+                        header('Location: index.php?success=true');
+                        exit();
+                        # Les | permettent juste de reunnir 3 catch en 1 seul pour eviter d'en avoir 3
+                    } catch (Exception_database_controller | PDOException | Exception $e) {
+                        $error = 'Ce compte existe déjà';
+                    }
                 }
                 else {
                     $error = 'Veuillez remplir le formulaire';
