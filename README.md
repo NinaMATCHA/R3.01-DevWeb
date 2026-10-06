@@ -1,6 +1,10 @@
 # R3.01-DevWeb
 Projet de développement web en PHP, utilisant un MVC dans le cadre de la ressource R3.01
 
+## Commandes
+**Tests Unitaires :** ./vendor/bin/phpunit
+**PHP Stan :** vendor/bin/phpstan analyse /workspaces/R3.01-DevWeb/modules --level=8
+
 ## Liste des développeurs
 - Ewan François [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/EwanFRANCOIS)
 - Aurèle Jambert [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Aurele879)
