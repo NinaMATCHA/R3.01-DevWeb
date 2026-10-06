@@ -34,7 +34,7 @@ class  signup_model {
      * @throws Exception_database_controller Si la requête d'insertion échoue.
      * @return bool Retourne true si l'inscription a réussi, false sinon.
      */
-    public function getInscription(string $_login,string $_password) : bool
+    public function getSignup(string $_login,string $_password) : bool
     {
         $passwordHash = password_hash($_password, PASSWORD_DEFAULT);
         $statement = $this->connection->getConnection()->prepare("INSERT INTO users (login, password, reset_code, expiration_date) VALUES (:login, :password, NULL, NULL);");
