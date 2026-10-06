@@ -13,7 +13,7 @@ try {
             (new \modules\controllers\signup_controller())->execute();
         }
 
-        else if ($_GET['action'] === 'profil') {
+        else if ($_GET['action'] === 'account') {
             (new \modules\controllers\account_controller())->execute();
         }
 
@@ -31,6 +31,10 @@ try {
 
         else if ($_GET['action'] === 'mdpOublie') {
             (new \modules\controllers\forgot_password_controller())->execute();
+        }
+
+        else if ($_GET['action'] === 'delete') {
+            (new \modules\controllers\delete_controller())->execute();
         }
 
         else {

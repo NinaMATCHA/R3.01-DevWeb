@@ -43,9 +43,10 @@ class signup_controller {
 
                 elseif ($_action === 'inscription') {
                     try {
-                        $inscriptionModel = new signup_model(DatabaseConnection::getInstance());
-                        $inscription = $inscriptionModel->getSignup($_login, $_password);
-
+                        $signupModel = new signup_model(DatabaseConnection::getInstance());
+                        $signup = $signupModel->getSignup($_login, $_password);
+                        $_SESSION['email'] = $_login;
+                        $_SESSION['password'] = $_password;
                         header('Location: index.php?success=true');
                         exit();
                         # Les | permettent juste de reunnir 3 catch en 1 seul pour eviter d'en avoir 3

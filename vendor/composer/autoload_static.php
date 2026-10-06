@@ -1356,7 +1356,7 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         'modules\\models\\forgot_password_model' => __DIR__ . '/../..' . '/modules/models/forgot_password_model.php',
         'modules\\models\\login_model' => __DIR__ . '/../..' . '/modules/models/login_model.php',
         'modules\\models\\signup_model' => __DIR__ . '/../..' . '/modules/models/signup_model.php',
-        'modules\\views\\Layout' => __DIR__ . '/../..' . '/modules/views/layout.php',
+        'modules\\views\\Layout' => __DIR__ . '/../..' . '/modules/views/Layout.php',
         'modules\\views\\account_view' => __DIR__ . '/../..' . '/modules/views/account_view.php',
         'modules\\views\\error' => __DIR__ . '/../..' . '/modules/views/error.php',
         'modules\\views\\forgot_password_view' => __DIR__ . '/../..' . '/modules/views/forgot_password_view.php',
