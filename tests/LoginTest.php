@@ -21,7 +21,7 @@ public function test_bon_mdp(): void
     $model = new login_model($dbConnStub);
     $result = $model->getConnection('utilisateur', '12345');
 
-    $this->assertSame('utilisateur', $result[0]->login);
+    $this->assertSame('utilisateur', $result->login);
 }
 
 public function test_mauvais_mdp(): void

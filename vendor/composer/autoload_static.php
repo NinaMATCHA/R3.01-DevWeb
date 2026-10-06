@@ -8,6 +8,7 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '9b38cf48e83f5d8f60375221cd213eee' => __DIR__ . '/..' . '/phpstan/phpstan/bootstrap.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
     );
 
@@ -1343,6 +1344,7 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         'TheSeer\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/theseer/tokenizer/src/Tokenizer.php',
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
         '_assets\\includes\\DatabaseConnection' => __DIR__ . '/../..' . '/_assets/includes/DatabaseConnection.php',
+        'includes\\Exception_database_controller' => __DIR__ . '/../..' . '/_assets/includes/Exception_database_controller.php',
         'modules\\controllers\\Homepage_controller' => __DIR__ . '/../..' . '/modules/controllers/Homepage_controller.php',
         'modules\\controllers\\Nevot_controller' => __DIR__ . '/../..' . '/modules/controllers/Nevot_controller.php',
         'modules\\controllers\\Salou_controller' => __DIR__ . '/../..' . '/modules/controllers/Salou_controller.php',
@@ -1354,13 +1356,12 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         'modules\\models\\forgot_password_model' => __DIR__ . '/../..' . '/modules/models/forgot_password_model.php',
         'modules\\models\\login_model' => __DIR__ . '/../..' . '/modules/models/login_model.php',
         'modules\\models\\signup_model' => __DIR__ . '/../..' . '/modules/models/signup_model.php',
-        'modules\\views\\Layout' => __DIR__ . '/../..' . '/modules/views/Layout.php',
+        'modules\\views\\Layout' => __DIR__ . '/../..' . '/modules/views/layout.php',
         'modules\\views\\account_view' => __DIR__ . '/../..' . '/modules/views/account_view.php',
         'modules\\views\\error' => __DIR__ . '/../..' . '/modules/views/error.php',
         'modules\\views\\forgot_password_view' => __DIR__ . '/../..' . '/modules/views/forgot_password_view.php',
         'modules\\views\\hello_view' => __DIR__ . '/../..' . '/modules/views/hello_view.php',
         'modules\\views\\homepage_view' => __DIR__ . '/../..' . '/modules/views/homepage_view.php',
-        'modules\\views\\legal_notice_view' => __DIR__ . '/../..' . '/modules/views/legal_notice_view.php',
         'modules\\views\\login_view' => __DIR__ . '/../..' . '/modules/views/login_view.php',
         'modules\\views\\nevot_view' => __DIR__ . '/../..' . '/modules/views/nevot_view.php',
         'modules\\views\\salou_view' => __DIR__ . '/../..' . '/modules/views/salou_view.php',
