@@ -1,12 +1,28 @@
 <?php
-/* Pour le moment on affiche juste la page mais il faudra prendre en compte l'id de l'utilisateur qui veut
-   se connecter en placant $id en paramètre dans la fonction execute */
 namespace modules\controllers;
 
 use _assets\includes\DatabaseConnection;
 use modules\models\login_model;
 
+
+/**
+ * Contrôleur de la page de connexion.
+ * 
+ * Gère le traitement du formulaire de connexion en POST 
+ * et la mise en session de l'utilisateur authentifié.
+ */
+
 class login_controller {
+
+
+/**
+     * Exécute la logique de connexion.
+     * 
+     * Traite les données POST transmises, tente l'authentification
+     * via le modèle, initialise la session et redirige vers l'accueil ou affiche les erreurs.
+     * 
+     * @return void
+     */
     public function execute(): void {
 
         session_start();
@@ -28,7 +44,8 @@ class login_controller {
 
                     if (!empty($connection)) {
                         $_SESSION['email'] = $_login;
-                        header('Location: index.php?action=login');
+                        header('Location: index.php');
+                        exit();
                     }
                     else {
                         $error = 'Email ou mot de passe incorrect';

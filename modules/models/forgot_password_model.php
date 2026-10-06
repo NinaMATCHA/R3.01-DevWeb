@@ -5,13 +5,27 @@ use PDO;
 use _assets\includes\DatabaseConnection;
 
 
+/**
+ * Gestion du processus de réinitialisation de mot de passe en base de données.
+ */
 class forgot_password_model {
-
+    /**
+     * @param DatabaseConnection $connection Instance de connexion à la base de données
+     */
 
 
     public function __construct(private DatabaseConnection $connection){}
 
-    //Fonction pour sauvegarder le token (une suite de caractere qui se met dans l'URL) a usage unique.
+
+    /**
+     * Enregistre un token à usage unique valide pendant 15 minutes.
+     *
+     * @param string $email Adresse email associée au compte
+     * @param string $token Empreinte aléatoire unique
+     * @return bool True si la mise à jour a modifié au moins une ligne, false sinon
+     * @throws Exception En cas d'erreur lors de l'exécution de la requête préparée
+     */
+
     private function saveTokenInDataBase(string $email, string $token): bool 
     {
        $sql = "UPDATE users SET reset_code = :token, expiration_date = DATE_ADD(NOW(), INTERVAL 15 MINUTE) WHERE login = :email";
@@ -26,7 +40,12 @@ class forgot_password_model {
 
 
 
-    //Fonction qui envoie le lien avec token par mail pour reset le mdp
+    /**
+     * Génère un token et expédie le courriel de réinitialisation.
+     *
+     * @param string $to Adresse email du destinataire
+     * @return bool Toujours true pour éviter l'énumération de comptes
+     */
     public function sendMail(string $to): bool
     {
     $token = bin2hex(random_bytes(32));
@@ -56,7 +75,15 @@ class forgot_password_model {
 }
 
 
-//Verif la validité du token et change le mdp
+    /**
+     * Vérifie la validité du token et met à jour le mot de passe de l'utilisateur.
+     *
+     * @param string $token Empreinte aléatoire unique à vérifier
+     * @param string $newPassword Nouveau mot de passe
+     * @return bool True si le token est valide et le mot de passe mis à jour, false si le token est invalide ou expiré
+     * @throws Exception En cas d'erreur lors de l'exécution de la requête préparée
+     */
+
     public function verifyTokenAndChangePassword(string $token, string $newPassword):bool{
     // recherche de l'utilisateur associé au token dans la BDD
        $sql = "SELECT login FROM users 

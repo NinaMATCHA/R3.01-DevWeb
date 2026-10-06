@@ -5,7 +5,18 @@ use _assets\includes\DatabaseConnection;
 use modules\models\forgot_password_model;
 use modules\views\forgot_password_view;
 
+
+/**
+ * Contrôleur gérant le flux de réinitialisation de mot de passe.
+ */
 class forgot_password_controller {
+
+    /**
+     * Exécute le traitement des requêtes GET et POST pour la réinitialisation du mot de passe.
+     *
+     * @return void
+     */
+
     function execute(): void {
     $model = new forgot_password_model(DatabaseConnection::getInstance());
     $messageError = null;

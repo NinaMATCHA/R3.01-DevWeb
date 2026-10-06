@@ -1,11 +1,24 @@
 <?php
-/* Comme connection, pour le moment on veut juste afficher mais on fera la gestion apres avec la bdd */
 namespace modules\controllers;
 
 use _assets\includes\DatabaseConnection;
 use modules\models\signup_model;
 
+
+/**
+ * Contrôleur gérant l'inscription des utilisateurs.
+ * 
+ * Traite la soumission du formulaire d'inscription, vérifie la cohérence
+ * des données saisies et fait appel au modèle pour enregistrer le compte.
+ */
 class signup_controller {
+
+
+    /**
+     * Exécute le traitement du formulaire et affiche la vue associée.
+     *
+     * @return void
+     */
     public function execute(): void {
 
         session_start();
@@ -35,7 +48,7 @@ class signup_controller {
                     exit();
                 }
                 else {
-                    $errror = 'Veuillez remplir le formulaire';
+                    $error = 'Veuillez remplir le formulaire';
                 }
             }
         }

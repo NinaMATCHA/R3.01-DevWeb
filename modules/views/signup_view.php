@@ -2,7 +2,18 @@
 
     namespace modules\views;
 
+
+    /**
+    * Vue responsable de l'affichage de la page d'inscription.
+    */
     class signup_view {
+
+        /**
+        * Génère et affiche le code HTML du formulaire d'inscription.
+        *
+        * @param string|null $error Message d'erreur éventuel à afficher à l'utilisateur.
+        * @return void
+        */
         public function show(?string $error = null): void {
             ob_start();
 ?>

@@ -6,16 +6,33 @@ use PDO;
 
 use _assets\includes\DatabaseConnection;
 
+
+/**
+ * Modèle de gestion de la connexion utilisateur.
+ * 
+ * Interroge la base de données pour vérifier les identifiants
+ * et authentifier l'utilisateur.
+ */
 class login_model {
 
-    #appelle le construct du DatabaseConnection.php et recupere ses id de connection pour pouvoir faire une query
+    /**
+     * Initialise l'instance du modèle avec la connexion à la base de données.
+     * 
+     * @param DatabaseConnection $connection Instance du gestionnaire de connexion BDD.
+     */
     public function __construct(private DatabaseConnection $connection) {}
 
-    #retourne les resultats que l'on veut de notre query ( je verrai plus tard mais faudra comparer les login avc WHERE )
-    public function getConnection(String $_login, $_password): ?array
+    /**
+     * Récupère un utilisateur en base de données et vérifie son mot de passe.
+     * 
+     * @param string $_login    Identifiant ou email de l'utilisateur.
+     * @param string $_password Mot de passe en clair soumis par le formulaire.
+     * 
+     * @return object|null Retourne l'objet de l'utilisateur si l'authentification réussit, null sinon.
+     */
+    public function getConnection(string $_login,string $_password): ?object
     {
 
-        $passwordHash = password_hash($_password, PASSWORD_DEFAULT);
         $statement = $this->connection->getConnection()->prepare('SELECT id, login, password FROM users WHERE login = :login LIMIT 1;');
 
         if (!$statement->execute([':login' => $_login])) {
@@ -29,7 +46,7 @@ class login_model {
             return null;
         }
 
-        return [$connection];
+        return $connection ?: null;
     }
 }
 
