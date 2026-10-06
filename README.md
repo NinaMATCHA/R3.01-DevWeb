@@ -8,6 +8,9 @@ Projet de développement web en PHP, utilisant un MVC dans le cadre de la ressou
 - Nina Matic-Charbit [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/NinaMATCHA)
 - Nicolas Moyenin [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/NicolasMoyenin)
 
+## Maquette
+[Voir la maquette Figma](https://www.figma.com/design/n6IRV5iQ6clbGnAHbRVYyb/Matheopolis?node-id=0-1&p=f&t=Uf5wDiDgbD4kr0Cz-0)
+
 ### Technologie
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
