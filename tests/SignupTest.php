@@ -15,7 +15,7 @@ class SignupTest extends TestCase
         $dbConnStub->method('getConnection')->willReturn($pdo);
 
         $model = new signup_model($dbConnStub);
-        $model->getInscription('utilisateur', '12345');
+        $model->getSignup('utilisateur', '12345');
 
         $stmt = $pdo->prepare('SELECT * FROM users WHERE login = ?');
         $stmt->execute(['utilisateur']);
@@ -34,9 +34,9 @@ class SignupTest extends TestCase
         $dbConnStub->method('getConnection')->willReturn($pdo);
 
         $model = new signup_model($dbConnStub);
-        $model->getInscription('utilisateur', '12345');
+        $model->getSignup('utilisateur', '12345');
 
         $this->expectException(\Exception::class);
-        $model->getInscription('utilisateur', 'autre_mdp');
+        $model->getSignup('utilisateur', 'autre_mdp');
     }
 }

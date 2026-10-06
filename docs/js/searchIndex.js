@@ -46,16 +46,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/includes-Exception-database-controller.html"
         },                {
-            "fqsen": "\\start_page\u0028\u0029",
-            "name": "start_page",
-            "summary": "",
-            "url": "namespaces/default.html#function_start_page"
-        },                {
-            "fqsen": "\\end_page\u0028\u0029",
-            "name": "end_page",
-            "summary": "",
-            "url": "namespaces/default.html#function_end_page"
-        },                {
             "fqsen": "\\modules\\controllers\\account_controller",
             "name": "account_controller",
             "summary": "",
@@ -226,10 +216,10 @@ Search.appendIndex(
             "summary": "Initialise\u0020le\u0020mod\u00E8le\u0020avec\u0020la\u0020connexion\u0020\u00E0\u0020la\u0020base\u0020de\u0020donn\u00E9es.",
             "url": "classes/modules-models-signup-model.html#method___construct"
         },                {
-            "fqsen": "\\modules\\models\\signup_model\u003A\u003AgetInscription\u0028\u0029",
-            "name": "getInscription",
+            "fqsen": "\\modules\\models\\signup_model\u003A\u003AgetSignup\u0028\u0029",
+            "name": "getSignup",
             "summary": "Cr\u00E9e\u0020un\u0020nouvel\u0020utilisateur\u0020en\u0020BDD\u0020apr\u00E8s\u0020hachage\u0020de\u0020son\u0020mot\u0020de\u0020passe.",
-            "url": "classes/modules-models-signup-model.html#method_getInscription"
+            "url": "classes/modules-models-signup-model.html#method_getSignup"
         },                {
             "fqsen": "\\modules\\models\\signup_model\u003A\u003A\u0024connection",
             "name": "connection",
@@ -348,7 +338,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\modules\\views\\nevot_view\u003A\u003Ashow\u0028\u0029",
             "name": "show",
-            "summary": "",
+            "summary": "Affiche\u0020la\u0020vue\u0020pagin\u00E9e\u0020des\u0020activit\u00E9s.",
             "url": "classes/modules-views-nevot-view.html#method_show"
         },                {
             "fqsen": "\\modules\\views\\salou_view",

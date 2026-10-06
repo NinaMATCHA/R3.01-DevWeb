@@ -13,22 +13,25 @@ class DatabaseConnection
         $envPath = __DIR__ . "/../../.env"; // Recupp le chemin absolus du fichier .env
         if (file_exists($envPath)) {
             $lines = file($envPath);
-            foreach ($lines as $line) {
-                list($name, $value) = explode('=', $line, 2); // On separe chaque = par 2 espace
-                $name = trim($name); // trim() supprime juste les caracteres speciaux
-                $value = trim($value);
+            // Vérification pour PHPStan : s'assurer que file() n'a pas retourné false
+            if ($lines !== false) {
+                foreach ($lines as $line) {
+                    list($name, $value) = explode('=', $line, 2); // On separe chaque = par 2 espace
+                    $name = trim($name); // trim() supprime juste les caracteres speciaux
+                    $value = trim($value);
 
-                // Verification si la variable n'existe pas deja pour eviter de tout casser
-                if (!array_key_exists($name, $_SERVER) && !array_key_exists($name, $_ENV)) {
-                    /*
-                    putenv permet de modifier ou creer une variable global au niveau PHP
-                    sprintf fabrique une string (%s pour string)
-                    On fait ca car en gros, putenv ne peut recup qu'une seul string on met donc
-                    tout dans une seul string d'ou le %s=%)
-                    */
-                    putenv(sprintf('%s=%s', $name, $value));
-                    $_ENV[$name] = $value;
-                    $_SERVER[$name] = $value;
+                    // Verification si la variable n'existe pas deja pour eviter de tout casser
+                    if (!array_key_exists($name, $_SERVER) && !array_key_exists($name, $_ENV)) {
+                        /*
+                        putenv permet de modifier ou creer une variable global au niveau PHP
+                        sprintf fabrique une string (%s pour string)
+                        On fait ca car en gros, putenv ne peut recup qu'une seul string on met donc
+                        tout dans une seul string d'ou le %s=%)
+                        */
+                        putenv(sprintf('%s=%s', $name, $value));
+                        $_ENV[$name] = $value;
+                        $_SERVER[$name] = $value;
+                    }
                 }
             }
         }
@@ -37,8 +40,13 @@ class DatabaseConnection
             $dbname = getenv('DB_NAME');
             $user = getenv('DB_USER');
             $password = getenv('DB_PASS');
+
+            // On remplace le 'false' potentiel par 'null' pour respecter la signature attendue par PDO
+            $userParam = ($user !== false) ? $user : null;
+            $passwordParam = ($password !== false) ? $password : null;
+
             $dsn = "mysql:host={$host};dbname={$dbname}";
-            $this->connection = new PDO($dsn, $user, $password);
+            $this->connection = new PDO($dsn, $userParam, $passwordParam);
             $this->connection->exec('SET CHARACTER SET utf8');
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
@@ -58,6 +66,10 @@ class DatabaseConnection
     #renvoie juste la co courante qui peut etre nulle sans __construct
     public function getConnection(): PDO
     {
+        if ($this->connection === null) {
+            throw new \RuntimeException('Connexion non initialisée.');
+        }
+
         return $this->connection;
     }
 }
