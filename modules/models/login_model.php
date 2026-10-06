@@ -46,7 +46,7 @@ class login_model {
             return null;
         }
 
-        return $connection ?: null;
+        return $connection;
     }
 }
 

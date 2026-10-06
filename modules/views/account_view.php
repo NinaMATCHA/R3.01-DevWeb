@@ -33,7 +33,7 @@ class account_view {
 </div>
 
 <?php
-        (new \modules\views\layout('Profil', ob_get_clean()))->show();
+        (new \modules\views\Layout('Profil', ob_get_clean()))->show();
     }
 }
 ?>
