@@ -4,6 +4,13 @@ namespace modules\views;
 
 class nevot_view {
 
+    /**
+     * Affiche la vue paginée des activités.
+     * 
+     * @param array<string> $activites  Liste le texte.
+     * @param int $page                  Numéro de la page courante.
+     * @param int $nombrePages           Nombre de pages.
+     */
     public function show(
         array $activites,
         int $page,
@@ -29,7 +36,7 @@ class nevot_view {
     <?php endif; ?>
 
     <?php for ($i = 1; $i <= $nombrePages; $i++): ?>
-        <a href="?action=nevot&page=<?= $i ?>">
+        <a href="?action=nevot&page=<?= $i ?>" style="<?= $i === $page ? 'font-weight: bold; text-decoration: underline;' : '' ?>">
             <?= $i ?>
         </a>
     <?php endfor; ?>

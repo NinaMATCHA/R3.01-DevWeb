@@ -30,7 +30,7 @@ class Nevot_controller {
                 $page = 1;
             }
 
-            $nombrePages = ceil(count($activites) / $parPage);
+            $nombrePages = (int) ceil(count($activites) / $parPage);
             if ($nombrePages < 1) {
                 $nombrePages = 1;
             }
