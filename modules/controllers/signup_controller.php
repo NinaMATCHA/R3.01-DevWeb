@@ -44,7 +44,7 @@ class signup_controller {
                 elseif ($_action === 'inscription') {
                     try {
                         $inscriptionModel = new signup_model(DatabaseConnection::getInstance());
-                        $inscription = $inscriptionModel->getInscription($_login, $_password);
+                        $inscription = $inscriptionModel->getSignup($_login, $_password);
 
                         header('Location: index.php?success=true');
                         exit();
