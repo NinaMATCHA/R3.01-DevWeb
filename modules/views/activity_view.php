@@ -22,10 +22,10 @@ class activity_view {
         <input type="text" name="op2" required />
 
         <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
-            <button class="btn" type="submit" name="action" value="+">+</button>
-            <button class="btn" type="submit" name="action" value="-">-</button>
-            <button class="btn" type="submit" name="action" value="*">×</button>
-            <button class="btn" type="submit" name="action" value="/">÷</button>
+            <button class="btn" type="submit" name="operation" value="+">+</button>
+            <button class="btn" type="submit" name="operation" value="-">-</button>
+            <button class="btn" type="submit" name="operation" value="*">×</button>
+            <button class="btn" type="submit" name="operation" value="/">÷</button>
         </div>
 
         <button class="btn" type="reset">Réinitialiser</button>
@@ -34,7 +34,7 @@ class activity_view {
     if ($result) {
         ?>
         <div class="card parchment">
-            <? echo htmlspecialchars($result); ?>
+            <?= htmlspecialchars($result); ?>
         </div>
         <?php
     }

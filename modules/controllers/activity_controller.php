@@ -6,23 +6,23 @@ class activity_controller {
     public function execute(): void {
         session_start();
         if (isset($_SESSION['email'])) {
-                $op1 = (int) $_POST['op1'];
-                $op2 = (int) $_POST['op2'];
                 $op = 0;
 
-                if (isset($_POST['action'])) {
-                    echo 'bouton appuyé';
+                if (isset($_POST['operation'])) {
+                    $action = $_POST['operation'];
+                    $op1 = (float) $_POST['op1'];
+                    $op2 = (float) $_POST['op2'];
 
-                    if ($_POST['action'] == '+') {
+                    if ($action == '+') {
                         $op = $op1 + $op2;
                     }
-                    else if ($_POST['action'] == '-') {
+                    else if ($action == '-') {
                         $op = $op1 - $op2;
                     }
-                    else if ($_POST['action'] == '*') {
+                    else if ($action == '*') {
                         $op = $op1 * $op2;
                     }
-                    else if ($_POST['action'] == '/') {
+                    else if ($action == '/') {
                         $op = $op1 / $op2;
                     }
                 }
