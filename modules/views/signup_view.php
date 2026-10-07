@@ -24,7 +24,7 @@
 
 <div class=card>
     <p>
-    Si vous voulez accedez à l'ensemble du site blah blah blah vendez votre âme et inscrivez vous :)
+    Si vous voulez accedez à l'ensemble du site inscrivez vous
     </p>
 </div>
 
@@ -47,7 +47,7 @@
         echo htmlspecialchars($error);
     }
     ?>
-    <a href="index.php?action=login">S'inscrire</a>
+    <a href="index.php?action=login">Se connecter</a>
 </div>
 
 <?php
