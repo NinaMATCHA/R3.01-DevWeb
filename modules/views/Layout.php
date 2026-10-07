@@ -20,12 +20,12 @@ class Layout
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta property="og:title" content="<?=$_titreRef?>"\>
-    <meta property="og:description" content="<?=$_description?>"/>
-    <meta property="og:image" content="<?=$_Image?>"/>
+    <meta property="og:title" content="<?=$_titreRef?>">
+    <meta property="og:description" content="<?=$_description?>">
+    <meta property="og:image" content="<?=$_Image?>">
     <meta name="description" content="<?= $_description ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Math, Matheopolis, Mathematique, Livre, Egypte, histoire, fubuki, bau bau, opération, calcul, Nevot, enigmes"/>
+    <meta name="keywords" content="Math, Matheopolis, Mathematique, Livre, Egypte, histoire, fubuki, bau bau, opération, calcul, Nevot, enigmes">
     <title><?= htmlspecialchars($this->title); ?></title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="/_assets/style/style.css">
