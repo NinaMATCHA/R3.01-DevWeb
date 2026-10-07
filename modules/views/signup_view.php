@@ -38,7 +38,7 @@
         <input type="password" id="verif" name="verif" placeholder="Verification" class="input" required >
 
         <div>
-            <button type="submit" name="action" value="inscription" class="btn">envoyer</button>
+            <button type="submit" name="action" value="inscription" class="btn">Envoyer</button>
             <button type="reset" class="btn">Réinitialiser</button>
         </div>
     </form>
