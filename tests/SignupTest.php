@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use modules\models\signup_model;
+use modules\models\SignupModel;
 use _assets\includes\DatabaseConnection;
 
 class SignupTest extends TestCase
@@ -14,7 +14,7 @@ class SignupTest extends TestCase
         $dbConnStub = $this->createStub(DatabaseConnection::class);
         $dbConnStub->method('getConnection')->willReturn($pdo);
 
-        $model = new signup_model($dbConnStub);
+        $model = new SignupModel($dbConnStub);
         $model->getSignup('utilisateur', '12345');
 
         $stmt = $pdo->prepare('SELECT * FROM users WHERE login = ?');
@@ -33,7 +33,7 @@ class SignupTest extends TestCase
         $dbConnStub = $this->createStub(DatabaseConnection::class);
         $dbConnStub->method('getConnection')->willReturn($pdo);
 
-        $model = new signup_model($dbConnStub);
+        $model = new SignupModel($dbConnStub);
         $model->getSignup('utilisateur', '12345');
 
         $this->expectException(\Exception::class);

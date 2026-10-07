@@ -2,9 +2,9 @@
 Projet de développement web en PHP, utilisant un MVC dans le cadre de la ressource R3.01
 
 ## Commandes
-**Tests Unitaires :** ./vendor/bin/phpunit
-
-**PHP Stan :** vendor/bin/phpstan analyse /workspaces/R3.01-DevWeb/modules --level=8
+**Tests Unitaires :** composer test
+**PHP Stan :** composer analyse
+**PHP sniffer :** composer check
 
 **Génération du PHPDoc (à faire à chaque modification de la doc) :** docker run --rm -v "$(pwd):/data" phpdoc/phpdoc:3 -d . -t docs
 

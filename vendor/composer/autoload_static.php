@@ -13,22 +13,22 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
     );
 
     public static $prefixLengthsPsr4 = array (
-        'P' => 
+        'P' =>
         array (
             'PhpParser\\' => 10,
         ),
-        'D' => 
+        'D' =>
         array (
             'DeepCopy\\' => 9,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'PhpParser\\' => 
+        'PhpParser\\' =>
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
-        'DeepCopy\\' => 
+        'DeepCopy\\' =>
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
@@ -1344,31 +1344,31 @@ class ComposerStaticInitfbee484fbcb98ba45566f17e8eb69e9b
         'TheSeer\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/theseer/tokenizer/src/Tokenizer.php',
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
         '_assets\\includes\\DatabaseConnection' => __DIR__ . '/../..' . '/_assets/includes/DatabaseConnection.php',
-        'includes\\Exception_database_controller' => __DIR__ . '/../..' . '/_assets/includes/Exception_database_controller.php',
-        'modules\\controllers\\Homepage_controller' => __DIR__ . '/../..' . '/modules/controllers/Homepage_controller.php',
-        'modules\\controllers\\account_controller' => __DIR__ . '/../..' . '/modules/controllers/account_controller.php',
-        'modules\\controllers\\activity_controller' => __DIR__ . '/../..' . '/modules/controllers/activity_controller.php',
-        'modules\\controllers\\book_controller' => __DIR__ . '/../..' . '/modules/controllers/book_controller.php',
-        'modules\\controllers\\delete_controller' => __DIR__ . '/../..' . '/modules/controllers/delete_controller.php',
-        'modules\\controllers\\forgot_password_controller' => __DIR__ . '/../..' . '/modules/controllers/forgot_password_controller.php',
-        'modules\\controllers\\login_controller' => __DIR__ . '/../..' . '/modules/controllers/login_controller.php',
-        'modules\\controllers\\signup_controller' => __DIR__ . '/../..' . '/modules/controllers/signup_controller.php',
-        'modules\\controllers\\world_controller' => __DIR__ . '/../..' . '/modules/controllers/world_controller.php',
-        'modules\\models\\delete_model' => __DIR__ . '/../..' . '/modules/models/delete_model.php',
-        'modules\\models\\forgot_password_model' => __DIR__ . '/../..' . '/modules/models/forgot_password_model.php',
-        'modules\\models\\login_model' => __DIR__ . '/../..' . '/modules/models/login_model.php',
-        'modules\\models\\signup_model' => __DIR__ . '/../..' . '/modules/models/signup_model.php',
+        'includes\\ExceptionDatabaseController' => __DIR__ . '/../..' . '/_assets/includes/ExceptionDatabaseController.php',
+        'modules\\controllers\\AccountController' => __DIR__ . '/../..' . '/modules/controllers/AccountController.php',
+        'modules\\controllers\\ActivityController' => __DIR__ . '/../..' . '/modules/controllers/ActivityController.php',
+        'modules\\controllers\\BookController' => __DIR__ . '/../..' . '/modules/controllers/BookController.php',
+        'modules\\controllers\\DeleteController' => __DIR__ . '/../..' . '/modules/controllers/DeleteController.php',
+        'modules\\controllers\\ForgotPasswordController' => __DIR__ . '/../..' . '/modules/controllers/ForgotPasswordController.php',
+        'modules\\controllers\\HomepageController' => __DIR__ . '/../..' . '/modules/controllers/HomepageController.php',
+        'modules\\controllers\\LoginController' => __DIR__ . '/../..' . '/modules/controllers/LoginController.php',
+        'modules\\controllers\\SignupController' => __DIR__ . '/../..' . '/modules/controllers/SignupController.php',
+        'modules\\controllers\\WorldController' => __DIR__ . '/../..' . '/modules/controllers/WorldController.php',
+        'modules\\models\\DeleteModel' => __DIR__ . '/../..' . '/modules/models/DeleteModel.php',
+        'modules\\models\\ForgotPasswordModel' => __DIR__ . '/../..' . '/modules/models/ForgotPasswordModel.php',
+        'modules\\models\\LoginModel' => __DIR__ . '/../..' . '/modules/models/LoginModel.php',
+        'modules\\models\\SignupModel' => __DIR__ . '/../..' . '/modules/models/SignupModel.php',
+        'modules\\views\\AccountView' => __DIR__ . '/../..' . '/modules/views/AccountView.php',
+        'modules\\views\\ActivityView' => __DIR__ . '/../..' . '/modules/views/ActivityView.php',
+        'modules\\views\\BookView' => __DIR__ . '/../..' . '/modules/views/BookView.php',
+        'modules\\views\\DeleteView' => __DIR__ . '/../..' . '/modules/views/DeleteView.php',
+        'modules\\views\\Error' => __DIR__ . '/../..' . '/modules/views/Error.php',
+        'modules\\views\\ForgotPasswordView' => __DIR__ . '/../..' . '/modules/views/ForgotPasswordView.php',
+        'modules\\views\\HomepageView' => __DIR__ . '/../..' . '/modules/views/HomepageView.php',
         'modules\\views\\Layout' => __DIR__ . '/../..' . '/modules/views/Layout.php',
-        'modules\\views\\account_view' => __DIR__ . '/../..' . '/modules/views/account_view.php',
-        'modules\\views\\activity_view' => __DIR__ . '/../..' . '/modules/views/activity_view.php',
-        'modules\\views\\book_view' => __DIR__ . '/../..' . '/modules/views/book_view.php',
-        'modules\\views\\delete_view' => __DIR__ . '/../..' . '/modules/views/delete_view.php',
-        'modules\\views\\error' => __DIR__ . '/../..' . '/modules/views/error.php',
-        'modules\\views\\forgot_password_view' => __DIR__ . '/../..' . '/modules/views/forgot_password_view.php',
-        'modules\\views\\homepage_view' => __DIR__ . '/../..' . '/modules/views/homepage_view.php',
-        'modules\\views\\login_view' => __DIR__ . '/../..' . '/modules/views/login_view.php',
-        'modules\\views\\signup_view' => __DIR__ . '/../..' . '/modules/views/signup_view.php',
-        'modules\\views\\world_view' => __DIR__ . '/../..' . '/modules/views/world_view.php',
+        'modules\\views\\LoginView' => __DIR__ . '/../..' . '/modules/views/LoginView.php',
+        'modules\\views\\SignupView' => __DIR__ . '/../..' . '/modules/views/SignupView.php',
+        'modules\\views\\WorldView' => __DIR__ . '/../..' . '/modules/views/WorldView.php',
         'staabm\\SideEffectsDetector\\SideEffect' => __DIR__ . '/..' . '/staabm/side-effects-detector/lib/SideEffect.php',
         'staabm\\SideEffectsDetector\\SideEffectsDetector' => __DIR__ . '/..' . '/staabm/side-effects-detector/lib/SideEffectsDetector.php',
     );
