@@ -47,6 +47,7 @@
         echo htmlspecialchars($error);
     }
     ?>
+    <a href="index.php?action=login">S'inscrire</a>
 </div>
 
 <?php
