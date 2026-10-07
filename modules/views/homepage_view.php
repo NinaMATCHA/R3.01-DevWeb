@@ -15,14 +15,16 @@ class homepage_view {
 
     <div class="card">
     <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Le site qui donne vie aux livres racontant l'histoire de l'héroïne Laurence Guerney,
+        ce superbe projet de fiction créé par l'association "Maths pour tous".
     </p>
     </div>
 
     <div class="card parchment">
     <p>
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Notre site vise à donner plus de visibilité sur Matheopolis mais surtout à aider les créateurs à viser plus de collégiens ainsi que
+        de lycéens pour les aider en mathématiques mais aussi pour rendre celles-ci vivantes, concrètes et accessibles à travers une très grande
+        aventure.
     </p>
 </div>
 

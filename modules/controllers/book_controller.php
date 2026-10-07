@@ -2,14 +2,14 @@
 
 namespace modules\controllers;
 
-class hello_controller {
+class book_controller {
     public function execute(): void {
         session_start();
         if (isset($_SESSION['email'])) {
-            (new \modules\views\hello_view())->show();
+            (new \modules\views\book_view())->show();
         }
         else {
-            header("location:index.php?action=account");
+            header('location: index.php?action=account');
             exit();
         }
     }
