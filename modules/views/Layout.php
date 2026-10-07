@@ -12,7 +12,7 @@ class Layout
     public function show(): void
     {
 
-        $_Image = '/../../_assets/Images/FubukiRef.jpg';
+        $_Image = 'https://ninamc.alwaysdata.net/_assets/Images/FubukiRef.jpg';
         $_description = 'Liens vers notre super site \'MATHEOPOLIS\'. Suivez une aventure folle et accomplissez les énigmes tout au long de votre parcours.';
         $_titreRef = 'Matheopolis';
         //session_start();
@@ -20,10 +20,12 @@ class Layout
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta property="og:title" content="<?=$_titreRef?>">
-    <meta property="og:description" content="<?=$_description?>">
-    <meta property="og:image" content="<?=$_Image?>">
+    <meta property="og:title" content="<?= htmlspecialchars($_titreRef) ?>">
     <meta name="description" content="<?= $_description ?>">
+    <meta property="og:description" content="<?= htmlspecialchars($_description)?>">
+    <meta property="og:image" content="<?= htmlspecialchars($_Image)?>">
+    <meta property="og:image:type" content="image/jpeg">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Math, Matheopolis, Mathematique, Livre, Egypte, histoire, fubuki, bau bau, opération, calcul, Nevot, enigmes">
     <title><?= htmlspecialchars($this->title); ?></title>
