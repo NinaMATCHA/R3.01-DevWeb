@@ -37,7 +37,7 @@ class delete_view {
 <div class="form-area">
     <form action="index.php?action=delete" method="post">
         <label for="password">Votre Mot de Passe :</label>
-        <input type="password" name="password" placeholder="Mot de passe" class="input" required />
+        <input type="password" id="password" name="password" placeholder="Mot de passe" class="input" required >
         <div>
             <button type="submit" name="action" value="deleteUser" class="btn">Envoyer</button>
         </div>
