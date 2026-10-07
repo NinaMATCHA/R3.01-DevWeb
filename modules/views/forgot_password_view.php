@@ -59,19 +59,22 @@ class forgot_password_view {
         <?php if ($token): ?>
             <!-- Formulaire : Nouveau mdp -->
             <form action="index.php?action=mdpOublie" method="post">
-                <input type="hidden" name="action_type" value="reset_password" />
-                <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>" />
+                <input type="hidden" name="action_type" value="reset_password">
+                <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
 
-                <input type="password" name="password" placeholder="Nouveau mot de passe" class="input" required minlength="8" />
+
+                <label for="password">Nouveau mot de passe :</label>
+                <input type="password" id="password" name="password" placeholder="Nouveau mot de passe" class="input" required minlength="8">
 
                 <button type="submit" class="btn">Valider</button>
             </form>
         <?php else: ?>
             <!-- Formulaire : Demande email -->
             <form action="index.php?action=mdpOublie" method="post">
-                <input type="hidden" name="action_type" value="request_reset" />
+                <input type="hidden" name="action_type" value="request_reset" >
 
-                <input type="email" name="email" placeholder="Adresse email" class="input" required />
+                <label for="email">Votre adresse email :</label>
+                <input type="email" id="email" name="email" placeholder="Adresse email" class="input" required >
 
                 <button type="submit" class="btn">Envoyer le lien</button>
             </form>
