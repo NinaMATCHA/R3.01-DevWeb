@@ -3,7 +3,7 @@
 namespace modules\views;
 
 class activity_view {
-    public function show(?string $result = null): void {
+    public function show(string|float|null $result = null): void {
         ob_start();
 ?>
 
@@ -31,10 +31,10 @@ class activity_view {
         <button class="btn" type="reset">Réinitialiser</button>
     </form>
     <?php
-    if ($result) {
+    if ($result !== null) {
         ?>
         <div class="card parchment">
-            <?= htmlspecialchars($result); ?>
+            <?= htmlspecialchars((string)$result); ?>
         </div>
         <?php
     }
