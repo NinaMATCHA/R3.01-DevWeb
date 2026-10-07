@@ -24,7 +24,7 @@ class SignupView
 
 <div class=card>
     <p>
-    Si vous voulez accedez à l'ensemble du site blah blah blah vendez votre âme et inscrivez vous :)
+    Si vous voulez accedez à l'ensemble du site inscrivez vous
     </p>
 </div>
 
@@ -42,12 +42,12 @@ class SignupView
             <button type="reset" class="btn">Réinitialiser</button>
         </div>
     </form>
-        <?php
-        if ($error) {
-            echo htmlspecialchars($error);
-        }
-        ?>
-    <a href="index.php?action=login">S'inscrire</a>
+    <?php
+    if ($error) {
+        echo htmlspecialchars($error);
+    }
+    ?>
+    <a href="index.php?action=login">Se connecter</a>
 </div>
 
         <?php

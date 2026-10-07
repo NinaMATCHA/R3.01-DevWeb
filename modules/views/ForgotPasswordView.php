@@ -59,10 +59,9 @@ class ForgotPasswordView
     <div class="form-area">
             <?php if ($token) : ?>
             <!-- Formulaire : Nouveau mdp -->
-            <form action="index.php?action=mdpOublie" method="post">
-                <input type="hidden" name="action_type" value="resetPassword">
+            <form action="index.php?action=forgot_pwd" method="post">
+                <input type="hidden" name="action_type" value="reset_password">
                 <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
-
 
                 <label for="password">Nouveau mot de passe :</label>
                 <input type="password" id="password" name="password" 
@@ -72,7 +71,7 @@ class ForgotPasswordView
             </form>
             <?php else : ?>
             <!-- Formulaire : Demande email -->
-            <form action="index.php?action=mdpOublie" method="post">
+            <form action="index.php?action=forgot_pwd" method="post">
                 <input type="hidden" name="action_type" value="request_reset" >
 
                 <label for="email">Votre adresse email :</label>

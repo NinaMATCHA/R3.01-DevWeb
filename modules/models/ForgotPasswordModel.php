@@ -62,11 +62,9 @@ class ForgotPasswordModel
 
 
         $subject = 'Réinitialisez votre mot de passe';
-
-
-    // Attention, le lien va peut-etre devoir etre changé, le but est de créer un lien unique pour changer de mdp
-        $link = 'https://ninamc.alwaysdata.net/index.php?action=mdpOublie&token=' . $token;
-        $message = "Bonjour,\n\n voici votre lien de récupération de mot de passe : \n" . $link;
+    // Attention, le lien va peut-etre devoir etre changé, le but est de créer un lien unique pour changer de mdp   
+    $link = 'https://ninamc.alwaysdata.net/index.php?action=forgot_pwd&token=' . $token;
+    $message = "Bonjour,\n\n voici votre lien de récupération de mot de passe : \n".$link;
 
     // En-têtes obligatoires / recommandés
         $headers = [

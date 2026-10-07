@@ -54,7 +54,7 @@ class LoginView
         ?>
             
     <a href="index.php?action=forgot_pwd">Mot de passe oublié ?</a>
-    <br><a href="index.php?action=signup">Se connecter</a>
+    <br><a href="index.php?action=signup">S'inscrire</a>
 </div>
 
         <?php
