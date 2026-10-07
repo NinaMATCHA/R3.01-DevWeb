@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use modules\models\login_model;
+use modules\models\LoginModel;
 use _assets\includes\DatabaseConnection;
 
 class LoginTest extends TestCase
@@ -18,7 +18,7 @@ public function test_bon_mdp(): void
     $dbConnStub = $this->createStub(DatabaseConnection::class);
     $dbConnStub->method('getConnection')->willReturn($pdo);
 
-    $model = new login_model($dbConnStub);
+    $model = new LoginModel($dbConnStub);
     $result = $model->getConnection('utilisateur', '12345');
 
     $this->assertSame('utilisateur', $result->login);
@@ -35,7 +35,7 @@ public function test_mauvais_mdp(): void
     $dbConnStub = $this->createStub(DatabaseConnection::class);
     $dbConnStub->method('getConnection')->willReturn($pdo);
 
-    $model = new login_model($dbConnStub);
+    $model = new LoginModel($dbConnStub);
     $result = $model->getConnection('utilisateur', 'mauvais_mdp');
 
     $this->assertNull($result);

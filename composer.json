@@ -1,12 +1,19 @@
 {
     "require-dev": {
         "phpunit/phpunit": "^12.5",
-        "phpstan/phpstan": "^2.3"
+        "phpstan/phpstan": "^2.3",
+        "squizlabs/php_codesniffer": "^4.0"
     },
     "autoload": {
         "classmap": [
             "_assets/",
             "modules/"
         ]
+    },
+    "scripts": {
+        "check": "phpcs --standard=PSR12 --exclude=PSR1.Classes.ClassDeclaration --ignore=*/autoloader.php modules/ _assets/includes/",
+        "fix": "phpcbf --standard=PSR12 --exclude=PSR1.Classes.ClassDeclaration --ignore=*/autoloader.php modules/ _assets/includes/",
+        "analyse": "phpstan analyse modules/ _assets/includes/",
+        "test": "phpunit"
     }
 }

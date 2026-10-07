@@ -7,16 +7,18 @@ class Layout
     public function __construct(
         private string $title,
         private string $content
-    ) {}
+    ) {
+    }
 
     public function show(): void
     {
 
         $_Image = 'https://ninamc.alwaysdata.net/_assets/Images/FubukiRef.jpg';
-        $_description = 'Liens vers notre super site \'MATHEOPOLIS\'. Suivez une aventure folle et accomplissez les énigmes tout au long de votre parcours.';
+        $_description = 'Liens vers notre super site \'MATHEOPOLIS\'. 
+        Suivez une aventure folle et accomplissez les énigmes tout au long de votre parcours.';
         $_titreRef = 'Matheopolis';
         //session_start();
-?><!DOCTYPE html>
+        ?><!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
@@ -27,7 +29,8 @@ class Layout
     <meta property="og:image:type" content="image/jpeg">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Math, Matheopolis, Mathematique, Livre, Egypte, histoire, fubuki, bau bau, opération, calcul, Nevot, enigmes">
+    <meta name="keywords" content="Math, Matheopolis, Mathematique, Livre, 
+    Egypte, histoire, fubuki, bau bau, opération, calcul, Nevot, enigmes">
     <title><?= htmlspecialchars($this->title); ?></title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="/_assets/style/style.css">
@@ -59,7 +62,7 @@ class Layout
 </nav>
 
 <main>
-    <?= $this->content; ?>
+        <?= $this->content; ?>
 </main>
 
 <footer>
@@ -70,7 +73,8 @@ class Layout
 
         Hébergé par alwaysdata.
 
-        <br>Si vous souhaitez en savoir plus sur Matheopolis ou bien acheter les livres, rejoignez leur site web ci-dessous.
+        <br>Si vous souhaitez en savoir plus sur Matheopolis ou 
+        bien acheter les livres, rejoignez leur site web ci-dessous.
     </p>
     <a href="https://www.matheopolis.org/">Site officiel Matheopolis</a>
     <a href="sitemap.xml">Plan du site.</a>
@@ -78,7 +82,7 @@ class Layout
 
 </body>
 </html>
-<?php
+        <?php
     }
 }
 

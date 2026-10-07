@@ -1,12 +1,16 @@
 <?php
+
 namespace _assets\includes;
+
 use PDO; // C'est une class global pour la connexion a la bdd
 use PDOException;
 
 class DatabaseConnection
 {
-    private ?PDO $connection = null; # connection prsk on appelle getConnection dans le cours : c'est ce qui contient les param de la pdo
-    private static ?DatabaseConnection $instance = null; # instance prsk on appelle getInstance aussi : ça permet de rester sur la meme session
+    private ?PDO $connection = null;
+    # connection prsk on appelle getConnection dans le cours : c'est ce qui contient les param de la pdo
+    private static ?DatabaseConnection $instance = null;
+    # instance prsk on appelle getInstance aussi : ça permet de rester sur la meme session
 
     private function __construct()
     {
@@ -54,7 +58,8 @@ class DatabaseConnection
         }
     }
 
-    #vérifie si l'instance ( donc l'objet et la connexion en cours ) est null pour en creer une auto dans le controller soit renvoyer celle courante
+    #vérifie si l'instance ( donc l'objet et la connexion en cours )
+    # est null pour en creer une auto dans le controller soit renvoyer celle courante
     public static function getInstance(): DatabaseConnection
     {
         if (self::$instance === null) {
