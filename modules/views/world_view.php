@@ -25,11 +25,9 @@ class world_view {
 
 <div class="card">
     <h2>Contenus</h2>
-    <?php foreach ($activites as $activite): ?>
-        <div class="activite">
-            <?= htmlspecialchars($activite) ?>
-        </div>
-    <?php endforeach; ?>
+    <div class="activite">
+        <?= htmlspecialchars($activites[$page - 1]) ?>
+    </div>
 
     <?php if ($page > 1): ?>
         <a href="?action=world&page=<?= $page - 1 ?>">←</a>

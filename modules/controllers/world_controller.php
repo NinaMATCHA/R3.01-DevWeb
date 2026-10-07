@@ -20,10 +20,6 @@ class world_controller {
             $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
             $nombrePages = 3;
 
-            if ($page > $nombrePages) {
-                $page = $nombrePages;
-            }
-
             (new \modules\views\world_view())->show($activites, $page, $nombrePages);
         }
         else {
