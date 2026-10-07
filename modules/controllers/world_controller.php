@@ -8,42 +8,23 @@ class world_controller {
         if (isset($_SESSION['email'])) {
 
             $activites = [
-                "Lorem ipsum dolor sit amet",
-                "Consectetur adipiscing elit",
-                "Sed do eiusmod tempor incididunt",
-                "Ut labore et dolore magna aliqua",
-                "Lorem ipsum dolor sit amet",
-                "Consectetur adipiscing elit",
-                "Sed do eiusmod tempor incididunt",
-                "Ut labore et dolore magna aliqua",
-                "Lorem ipsum dolor sit amet",
-                "Consectetur adipiscing elit",
-                "Sed do eiusmod tempor incididunt",
-                "Ut labore et dolore magna aliqua",
+                "Voici l'introduction de Mathéopolis, une série de livres créées par l'association Maths pour tous avec
+                le soutien des Instituts de recherche sur l'enseignement des mathématiques de Lyon et Aix Marseille...",
+                "Laurence est une jeune fille ayant es difficultés a comprendre l'utilité des maths qu'elle apprend au
+                lycées tout les jours. En effet, malgré la profession de son père mathématicien, elle ne l'a jamais compris
+                avant qu'il disparaisse sans laisser de trace...",
+                "Toutefois, lors d'une session particulièrement intriguante sur ses exercices de maths avec son grand père,
+                elle apprendra qu'il y aurait quelque chose de plus grand que des symboles écrits sur son cahier..."
             ];
 
-            $parPage = 5;
-
             $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
-
-            if ($page < 1) {
-                $page = 1;
-            }
-
-            $nombrePages = (int) ceil(count($activites) / $parPage);
-            if ($nombrePages < 1) {
-                $nombrePages = 1;
-            }
+            $nombrePages = 3;
 
             if ($page > $nombrePages) {
                 $page = $nombrePages;
             }
 
-            $offset = ($page - 1) * $parPage;
-
-            $activitesPage = array_slice($activites, $offset, $parPage);
-
-            (new \modules\views\world_view())->show($activitesPage, $page, $nombrePages);
+            (new \modules\views\world_view())->show($activites, $page, $nombrePages);
         }
         else {
             header('location: index.php?action=account');

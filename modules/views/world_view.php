@@ -36,7 +36,7 @@ class world_view {
     <?php endif; ?>
 
     <?php for ($i = 1; $i <= $nombrePages; $i++): ?>
-        <a href="?action=world&page=<?= $i ?>" style="<?= $i === $page ? 'font-weight: bold; text-decoration: underline;' : '' ?>">
+        <a href="?action=world&page=<?= $i ?>" style="<?= $i === $page ? 'font-weight: bold;' : '' ?>">
             <?= $i ?>
         </a>
     <?php endfor; ?>
