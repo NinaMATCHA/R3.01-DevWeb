@@ -1,5 +1,4 @@
 <?php
-/* MOT DE PASSE POUR LE SITE : sae_mdp_r301 */
 
 require '_assets/includes/autoloader.php';
 
@@ -17,19 +16,19 @@ try {
             (new \modules\controllers\account_controller())->execute();
         }
 
-        else if ($_GET['action'] === 'salou') {
-            (new \modules\controllers\Salou_controller())->execute();
+        else if ($_GET['action'] === 'book') {
+            (new \modules\controllers\book_controller())->execute();
         }
 
-        else if ($_GET['action'] === 'nevot') {
-            (new \modules\controllers\Nevot_controller())->execute();
+        else if ($_GET['action'] === 'world') {
+            (new \modules\controllers\world_controller())->execute();
         }
 
-        else if ($_GET['action'] === 'bonjour') {
-            (new \modules\controllers\hello_controller())->execute();
+        else if ($_GET['action'] === 'activity') {
+            (new \modules\controllers\activity_controller())->execute();
         }
 
-        else if ($_GET['action'] === 'mdpOublie') {
+        else if ($_GET['action'] === 'forgot_pwd') {
             (new \modules\controllers\forgot_password_controller())->execute();
         }
 

@@ -37,10 +37,10 @@ class Layout
 
 <nav>
     <ul>
-        <li><a href="index.php">Bienvenue</a></li>
-        <li><a href="index.php?action=salou">SALOU</a></li>
-        <li><a href="index.php?action=nevot">NEVOT</a></li>
-        <li><a href="index.php?action=bonjour">BONJOUR</a></li>
+        <li><a href="index.php">Accueil</a></li>
+        <li><a href="index.php?action=book">Les livres</a></li>
+        <li><a href="index.php?action=world">L'univers</a></li>
+        <li><a href="index.php?action=activity">Activités</a></li>
     </ul>
     <div class="dropdown">
         <button type="button">Menu ▾</button>
@@ -67,7 +67,10 @@ class Layout
         MATIC CHARBIT Nina et MOYENIN Nicolas.
 
         Hébergé par alwaysdata.
+
+        Si vous souhaitez en savoir plus sur Matheopolis ou bien acheter les livres, rejoignez leur site web ci-dessus.
     </p>
+    <a href="https://www.matheopolis.org/">Site officiel Matheopolis</a>
     <a href="sitemap.xml">Plan du site.</a>
 </footer>
 

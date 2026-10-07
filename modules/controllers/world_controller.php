@@ -2,7 +2,7 @@
 
 namespace modules\controllers;
 
-class Nevot_controller {
+class world_controller {
     public function execute(): void {
         session_start();
         if (isset($_SESSION['email'])) {
@@ -43,7 +43,7 @@ class Nevot_controller {
 
             $activitesPage = array_slice($activites, $offset, $parPage);
 
-            (new \modules\views\nevot_view())->show($activitesPage, $page, $nombrePages);
+            (new \modules\views\world_view())->show($activitesPage, $page, $nombrePages);
         }
         else {
             header('location: index.php?action=account');

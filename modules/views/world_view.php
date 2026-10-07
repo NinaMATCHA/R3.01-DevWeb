@@ -2,7 +2,7 @@
 
 namespace modules\views;
 
-class nevot_view {
+class world_view {
 
     /**
      * Affiche la vue paginée des activités.
@@ -20,11 +20,11 @@ class nevot_view {
 ?>
 
 <header>
-    <h1>NEVOT</h1>
+    <h1>L'univers</h1>
 </header>
 
 <div class="card">
-    <h2>Activités</h2>
+    <h2>Contenus</h2>
     <?php foreach ($activites as $activite): ?>
         <div class="activite">
             <?= htmlspecialchars($activite) ?>
@@ -32,24 +32,24 @@ class nevot_view {
     <?php endforeach; ?>
 
     <?php if ($page > 1): ?>
-        <a href="?action=nevot&page=<?= $page - 1 ?>">←</a>
+        <a href="?action=world&page=<?= $page - 1 ?>">←</a>
     <?php endif; ?>
 
     <?php for ($i = 1; $i <= $nombrePages; $i++): ?>
-        <a href="?action=nevot&page=<?= $i ?>" style="<?= $i === $page ? 'font-weight: bold; text-decoration: underline;' : '' ?>">
+        <a href="?action=world&page=<?= $i ?>" style="<?= $i === $page ? 'font-weight: bold; text-decoration: underline;' : '' ?>">
             <?= $i ?>
         </a>
     <?php endfor; ?>
 
     <?php if ($page < $nombrePages): ?>
-        <a href="?action=nevot&page=<?= $page + 1 ?>">→</a>
+        <a href="?action=world&page=<?= $page + 1 ?>">→</a>
     <?php endif; ?>
 
 </div>
 
 
 <?php
-        (new \modules\views\Layout('Nevot', ob_get_clean()))->show();
+        (new \modules\views\Layout('world', ob_get_clean()))->show();
     }
 }
 ?>

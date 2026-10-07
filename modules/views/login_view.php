@@ -52,7 +52,7 @@ class login_view {
     }
 ?>
             
-    <a href="index.php?action=mdpOublie">Mot de passe oublié ?</a>
+    <a href="index.php?action=forgot_pwd">Mot de passe oublié ?</a>
 </div>
 
 <?php
